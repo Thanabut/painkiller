@@ -23,10 +23,10 @@
 define('DB_NAME', 'painkiller_db');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'pk_user');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'HK2J5RTLW7T9f5WP');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
