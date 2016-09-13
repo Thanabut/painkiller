@@ -23,8 +23,10 @@
 define('DB_NAME', 'mcvyhzxj_painkillerdev');
 
 /** MySQL database username */
+define('DB_USER', 'mcvyhzxj_wp');
 
 /** MySQL database password */
+define('DB_PASSWORD', '59k8ZWx00HgKwUMN');
 
 /** MySQL hostname */
 define('DB_HOST', '27.254.140.34');
