@@ -20,16 +20,14 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'painkiller_db');
+define('DB_NAME', 'mcvyhzxj_painkillerdev');
 
 /** MySQL database username */
-define('DB_USER', 'pk_user');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'HK2J5RTLW7T9f5WP');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '27.254.140.34');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
