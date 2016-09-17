@@ -75,6 +75,7 @@ if($category_filter == "yes"){
 			$blog_page_range = $wp_query->max_num_pages;
 		}
 	?>
+
 	<div class="full_width"<?php if($background_color != "") { echo " style='background-color:". $background_color ."'";} ?>>
 		<div class="full_width_inner<?php echo esc_attr($container_inner_class); ?>" <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
 			<?php
