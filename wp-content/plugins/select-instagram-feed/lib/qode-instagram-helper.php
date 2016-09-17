@@ -62,8 +62,7 @@ class QodeStockholmInstagramHelper {
         $imageAlt = '';
         if(is_array($imageArr) && count($imageArr)) {
             $imageCaption = $imageArr['caption'];
-
-            $imageAlt = array_key_exists('text', $imageCaption) ? $imageCaption['text'] : '';
+            $imageAlt = isset($imageCaption['text']) ? $imageCaption['text'] : '';
         }
 
         return $imageAlt;
