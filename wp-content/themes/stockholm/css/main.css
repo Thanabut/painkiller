@@ -9,3 +9,8 @@
     display: none;
   }
 }
+@media only screen and (max-width: 600px) {
+  body.page-template-blog-pinterest-full-width-php .content .full_width {
+    padding: 44px 16px 25px;
+  }
+}

@@ -2,6 +2,7 @@
 
 $id = get_the_ID();
 
+
 $chosen_sidebar = get_post_meta(get_the_ID(), "qode_show-sidebar", true);
 $default_array = array('default', '');
 
@@ -9,7 +10,7 @@ if(!in_array($chosen_sidebar, $default_array)){
 	$sidebar = get_post_meta(get_the_ID(), "qode_show-sidebar", true);
 }else{
 	$sidebar = $qode_options['blog_single_sidebar'];
-}
+} 
 
 $blog_single_hide_comments = "";
 if (isset($qode_options['blog_single_hide_comments']))
