@@ -23,7 +23,6 @@
 	$blog_style = $qode_options['blog_style'];
 	$blog_list = "";
 	$blog_loading_class = "";
-
 	if($qode_template_name != "") {
 		if($qode_template_name == "blog-large-image.php"){
 			$blog_list = "blog_large_image";
@@ -108,8 +107,9 @@
 	}
 
 ?>
+
 <div class="blog_holder <?php echo esc_attr($blog_list_class); ?> <?php echo esc_attr($blog_loading_class); ?>">
-	<?php if(have_posts()) : while ( have_posts() ) : the_post(); ?>
+	<?php  if(have_posts()) : while ( have_posts() ) : the_post(); ?>
 		<?php
 			get_template_part('templates/blog/'.$blog_list, 'loop');
 		?>

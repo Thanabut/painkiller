@@ -7,7 +7,6 @@ $blog_hide_comments = "";
 if (isset($qode_options['blog_hide_comments'])) {
 	$blog_hide_comments = $qode_options['blog_hide_comments'];
 }
-
 $blog_hide_author = "";
 if (isset($qode_options['blog_hide_author'])) {
 	$blog_hide_author = $qode_options['blog_hide_author'];
@@ -18,6 +17,7 @@ if (isset($qode_options['wp_read_more'])) {
 	$wp_read_more = $qode_options['wp_read_more'];
 }
 $_post_format = get_post_format();
+
 ?>
 <?php
 switch ($_post_format) {

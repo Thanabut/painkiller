@@ -13,7 +13,7 @@ if(get_post_meta($id, "qode_page_background_color", true) != ""){
 }else{
 	$background_color = "";
 }
-
+$minttttt;
 $content_style = "";
 if(get_post_meta($id, "qode_content-top-padding", true) != ""){
 	if(get_post_meta($id, "qode_content-top-padding-mobile", true) == "yes"){

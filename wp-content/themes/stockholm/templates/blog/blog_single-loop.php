@@ -35,6 +35,7 @@ if(isset($qode_options['blog_single_audio_style'])  && $qode_options['blog_singl
 ?>
 <?php
 $_post_format = get_post_format();
+
 ?>
 <?php
 	switch ($_post_format) {

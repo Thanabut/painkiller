@@ -8,11 +8,42 @@ $blog_hide_comments = "";
 if (isset($qode_options['blog_hide_comments'])) {
 	$blog_hide_comments = $qode_options['blog_hide_comments'];
 }
-
 $blog_hide_author = "";
 if (isset($qode_options['blog_hide_author'])) {
 	$blog_hide_author = $qode_options['blog_hide_author'];
 }
+
+$post = get_post(get_the_ID());
+$date = $post->post_date;
+$originalDate = split(' ', $date)[0];
+$newDate = date("d F Y", strtotime($originalDate));
+
+$timestamp = str_replace(" ","T",$date);
+$day = '';
+
+$today = new DateTime(); // This object represents current date/time
+$today->setTime( 0, 0, 0 ); // reset time part, to prevent partial comparison
+
+$match_date = DateTime::createFromFormat( "Y-m-d\\TH:i:s", $timestamp );
+$match_date->setTime( 0, 0, 0 ); // reset time part, to prevent partial comparison
+
+$diff = $today->diff( $match_date );
+$diffDays = (integer)$diff->format( "%R%a" ); // Extract days count in interval
+
+switch( $diffDays ) {
+    case 0:
+        $day = 'Today';
+        break;
+    case -1:
+        $day = 'Yesterday';
+        break;
+    case +1:
+         $day = "Tomorrow";
+        break;
+    default:
+        echo "";
+}
+
 
 $wp_read_more = "off";
 if (isset($qode_options['wp_read_more'])) {
@@ -50,7 +81,7 @@ switch ($_post_format) {
 			</div>
 			<div class="post_text">
 				<div class="post_text_inner">
-					<h4><a href="<?php the_permalink(); ?>" target="_self" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
+					<h4><a href="<?php the_permalink(); ?>" target="_self" title="<?php the_title_attribute(); ?>"><?php echo the_title()?></a></h4>
 					<div class="post_info">
 						<span class="post_category">
 							<span><?php _e('In', 'qode'); ?></span>
@@ -68,14 +99,14 @@ switch ($_post_format) {
 						<div class="post_author_holder">
 							<?php if($blog_hide_author == "no") { ?>
 								<div class="post_author">
-									<span><?php _e('By', 'qode'); ?></span> <a class="post_author_link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><span><?php the_author_meta('display_name'); ?></span></a>
+									<span><?php echo 'SHARE'; ?></span> 
 								</div>
 							<?php } ?>
 							<?php if($blog_hide_comments != "yes"){ ?>
 								<div class="post_comments">
-									<a class="post_comments" href="<?php comments_link(); ?>" target="_self">
-										<span><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></span>
-									</a>
+									<div class="post_comments">
+										<span><?php echo (!empty($day))? $day : $newDate;  ?></span>
+									</div>
 								</div>
 							<?php } ?>
 						</div>
@@ -121,14 +152,14 @@ switch ($_post_format) {
 						<div class="post_author_holder">
 							<?php if($blog_hide_author == "no") { ?>
 								<div class="post_author">
-									<span><?php _e('By', 'qode'); ?></span> <a class="post_author_link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><span><?php the_author_meta('display_name'); ?></span></a>
+									<span><?php echo 'SHARE'; ?></span>
 								</div>
 							<?php } ?>
 							<?php if($blog_hide_comments != "yes"){ ?>
 								<div class="post_comments">
-									<a class="post_comments" href="<?php comments_link(); ?>" target="_self">
-										<span><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></span>
-									</a>
+									<div class="post_comments" >
+										<span><?php echo (!empty($day))? $day : $newDate; ?></span>
+									</div>
 								</div>
 							<?php } ?>
 						</div>
@@ -161,14 +192,14 @@ switch ($_post_format) {
 							<div class="post_author_holder">
 								<?php if($blog_hide_author == "no") { ?>
 									<div class="post_author">
-										<span><?php _e('By', 'qode'); ?></span> <a class="post_author_link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><span><?php the_author_meta('display_name'); ?></span></a>
+										<span><?php echo 'SHARE'; ?></span> 
 									</div>
 								<?php } ?>
 								<?php if($blog_hide_comments != "yes"){ ?>
 									<div class="post_comments">
-										<a class="post_comments" href="<?php comments_link(); ?>" target="_self">
-											<span><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></span>
-										</a>
+										<div class="post_comments" href="">
+											<span><?php echo (!empty($day))? $day : $newDate;  ?></span>
+										</div>
 									</div>
 								<?php } ?>
 							</div>
@@ -223,14 +254,14 @@ switch ($_post_format) {
 						<div class="post_author_holder">
 							<?php if($blog_hide_author == "no") { ?>
 								<div class="post_author">
-									<span><?php _e('By', 'qode'); ?></span> <a class="post_author_link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><span><?php the_author_meta('display_name'); ?></span></a>
+									<span><?php echo 'SHARE'; ?></span> 
 								</div>
 							<?php } ?>
 							<?php if($blog_hide_comments != "yes"){ ?>
 								<div class="post_comments">
-									<a class="post_comments" href="<?php comments_link(); ?>" target="_self">
-										<span><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></span>
-									</a>
+									<div class="post_comments" href="" >
+										<span><?php echo (!empty($day))? $day : $newDate;  ?></span>
+									</div>
 								</div>
 							<?php } ?>
 						</div>
@@ -266,14 +297,14 @@ switch ($_post_format) {
 							<div class="post_author_holder">
 								<?php if($blog_hide_author == "no") { ?>
 									<div class="post_author">
-										<span><?php _e('By', 'qode'); ?></span> <a class="post_author_link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><span><?php the_author_meta('display_name'); ?></span></a>
+										<span><?php echo 'SHARE'; ?></span> 
 									</div>
 								<?php } ?>
 								<?php if($blog_hide_comments != "yes"){ ?>
 									<div class="post_comments">
-										<a class="post_comments" href="<?php comments_link(); ?>" target="_self">
-											<span><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></span>
-										</a>
+										<div class="post_comments">
+											<span><?php echo (!empty($day))? $day : $newDate;  ?></span>
+										</div>
 									</div>
 								<?php } ?>
 							</div>
@@ -316,14 +347,15 @@ switch ($_post_format) {
 						<div class="post_author_holder">
 							<?php if($blog_hide_author == "no") { ?>
 								<div class="post_author">
-									<span><?php _e('By', 'qode'); ?></span> <a class="post_author_link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><span><?php the_author_meta('display_name'); ?></span></a>
+								   <span><?php echo 'SHARE'; ?></span> <!--<a class="post_author_link" href=" <?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><span><?php the_author_meta('display_name'); ?></span></a> -->
 								</div>
 							<?php } ?>
 							<?php if($blog_hide_comments != "yes"){ ?>
 								<div class="post_comments">
-									<a class="post_comments" href="<?php comments_link(); ?>" target="_self">
-										<span><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></span>
-									</a>
+									<div class="post_comments" >
+										<span><?php echo (!empty($day))? $day : $newDate; ?></span>
+										<!--<span><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></span>-->
+									</div>
 								</div>
 							<?php } ?>
 						</div>
