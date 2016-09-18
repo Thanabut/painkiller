@@ -13,3 +13,4 @@ if(isset($qode_options['portfolio_social_share_type'])  && $qode_options['portfo
 		<?php echo do_shortcode('[social_share_list list_type=' . $social_type . ']'); ?>
 	</div> <!-- close div.portfolio_social_holder -->
 <?php } ?>
+

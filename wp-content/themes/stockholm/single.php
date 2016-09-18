@@ -2,6 +2,7 @@
 
 $id = get_the_ID();
 
+
 $chosen_sidebar = get_post_meta(get_the_ID(), "qode_show-sidebar", true);
 $default_array = array('default', '');
 
@@ -9,7 +10,7 @@ if(!in_array($chosen_sidebar, $default_array)){
 	$sidebar = get_post_meta(get_the_ID(), "qode_show-sidebar", true);
 }else{
 	$sidebar = $qode_options['blog_single_sidebar'];
-}
+} 
 
 $blog_single_hide_comments = "";
 if (isset($qode_options['blog_single_hide_comments']))
@@ -30,8 +31,24 @@ if(get_post_meta($id, "qode_content-top-padding", true) != ""){
 	}
 }
 ?>
-<?php get_header(); ?>
-<?php if (have_posts()) : ?>
+<?php get_header(); 
+$portfolio_categories = get_the_category(get_the_ID());
+
+foreach ($portfolio_categories as $portfolio_category) {
+	if($portfolio_category->name === 'Painkiller' || $portfolio_category->name === 'Mister Painkiller'){
+		?>
+		<div class="header-painkiller">
+			<div class="header-painkiller-content"> 
+				<div class="menu-painkiller"> 
+					<a href=""> <p> S/S16 LAND BEFORE TIME </p> </a>
+					<a href=""> <p> Archive </p> </a>
+					<a href=""> <p> View collection by print </p> </a>
+			    </div>
+			</div>
+		</div>
+	<?php }
+}
+if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
 				<?php if(get_post_meta($id, "qode_page_scroll_amount_for_sticky", true)) { ?>
 					<script>

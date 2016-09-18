@@ -3,7 +3,6 @@
 global $wp_query;
 global $qode_options;
 global $wpdb;
-
 //init variables
 $portfolio_images 			    = get_post_meta(get_the_ID(), "qode_portfolio_images", true);
 $lightbox_single_project 	    = 'no';

@@ -2,7 +2,6 @@
 //get global variables
 global $wp_query;
 global $qode_options;
-
 //init variables
 $id 						= $wp_query->get_queried_object_id();
 $container_styles			= 'style="';
@@ -29,6 +28,7 @@ if(get_post_meta($id, "qode_content-top-padding", true) != ""){
 	$content_style = "";
 }
 
+
 $sidebar = "";
 if(get_post_meta(get_the_ID(), "qode_portfolio_show_sidebar", true) != "" && get_post_meta(get_the_ID(), "qode_portfolio_show_sidebar", true) != "default"){
 	$sidebar = get_post_meta(get_the_ID(), "qode_portfolio_show_sidebar", true);
@@ -37,8 +37,7 @@ if(get_post_meta(get_the_ID(), "qode_portfolio_show_sidebar", true) != "" && get
 		$sidebar = $qode_options['portfolio_single_sidebar'];
 	}
 }
-?>
-
+ ?>
 <div class="container" <?php echo wp_kses($container_styles, array('style')); ?>>
 	<div class="container_inner default_template_holder clearfix" <?php if($content_style != "") { echo " style='padding-top:". esc_attr($content_style) ."px'";} ?>>
 		<?php if(($sidebar == "default") || ($sidebar == "")) : ?>
@@ -93,7 +92,7 @@ if(get_post_meta(get_the_ID(), "qode_portfolio_show_sidebar", true) != "" && get
 				<div class="two_columns_33_66 portfolio_single_sidebar clearfix">
 			<?php elseif($sidebar == "4") : ?>
 				<div class="two_columns_25_75 portfolio_single_sidebar clearfix">
-			<?php endif; ?>
+			<?php endif;  ?>
 					<div class="column1">
 						<?php get_sidebar(); ?>
 					</div>
