@@ -31,12 +31,19 @@ if(get_post_meta($id, "qode_content-top-padding", true) != ""){
 	}
 }
 ?>
-<?php get_header(); 
+<?php get_header(); ?>
+
+<?php
 $portfolio_categories = get_the_category(get_the_ID());
 
 foreach ($portfolio_categories as $portfolio_category) {
 	if($portfolio_category->name === 'Painkiller' || $portfolio_category->name === 'Mister Painkiller'){
 		?>
+		<style type="text/css">
+			header{
+				position: fixed;
+			}
+		</style>
 		<div class="header-painkiller">
 			<div class="header-painkiller-content"> 
 				<div class="menu-painkiller"> 
