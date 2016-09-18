@@ -23,10 +23,10 @@ $qodeFramework->qodeMetaBoxes->addMetaBox("portfolio_images",$qodePortfolioImage
 	$qodePortfolioImages->addChild("qode_portfolio-image-gallery",$qode_portfolio_image_gallery);
 
 
-$qodePortfolioImages = new QodeMetaBox("post", "Select Portfolio Images (multiple upload)", "portfolio-images-meta");
+$qodePortfolioImages = new QodeMetaBox("post", "Select Collection Images (multiple upload)", "portfolio-images-meta");
 $qodeFramework->qodeMetaBoxes->addMetaBox("portfolio_images",$qodePortfolioImages);
 
-	$qode_portfolio_image_gallery = new QodeMultipleImages("qode_portfolio-image-gallery","Portfolio Images","Choose your portfolio images");
+	$qode_portfolio_image_gallery = new QodeMultipleImages("qode_portfolio-image-gallery","Collection Images","Choose your collection images");
 	$qodePortfolioImages->addChild("qode_portfolio-image-gallery",$qode_portfolio_image_gallery);
 
 /*//Portfolio Images/Videos
