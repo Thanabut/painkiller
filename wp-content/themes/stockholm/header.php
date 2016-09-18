@@ -3,9 +3,11 @@
 <?php
 global $qode_options;
 global $wp_query;
+
 ?>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+
 	<?php
 	if (isset($_SERVER['HTTP_USER_AGENT']) && (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false))
 		echo('<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">');
@@ -25,6 +27,7 @@ global $wp_query;
 	<?php do_action('qode_header_meta'); ?>
 	
 	<link rel="profile" href="http://gmpg.org/xfn/11"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/main.css">
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>

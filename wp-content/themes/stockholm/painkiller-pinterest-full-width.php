@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Blog Pinterest Full Width
+Template Name: Painkiller Pinterest Full Width
 */
 ?>
 <?php get_header(); ?>
@@ -18,8 +18,8 @@ elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
 else { $paged = 1; }
 $page_object = get_post( $id );
 $q_content = $page_object->post_content;
-
 $q_content = apply_filters( 'the_content', $q_content );
+
 $sidebar = get_post_meta($id, "qode_show-sidebar", true);
 
 if(get_post_meta($id, "qode_page_background_color", true) != ""){
@@ -45,8 +45,6 @@ $category_filter = "no";
 if(isset($qode_options['blog_masonry_filter'])){
 	$category_filter = $qode_options['blog_masonry_filter'];
 }
-//$category_filter = "yes";
-
 $container_inner_class = "";
 if($category_filter == "yes"){
 	$container_inner_class = " full_page_container_inner";
@@ -78,7 +76,6 @@ if($category_filter == "yes"){
 			$blog_page_range = $wp_query->max_num_pages;
 		}
 	?>
-
 	<div class="full_width"<?php if($background_color != "") { echo " style='background-color:". $background_color ."'";} ?>>
 		<div class="full_width_inner<?php echo esc_attr($container_inner_class); ?>" <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
 			<?php
