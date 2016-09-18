@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Blog Pinterest Full Width
+Template Name: Painkiller Pinterest Full Width
 */
 ?>
 <?php get_header(); ?>

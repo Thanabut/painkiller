@@ -1,0 +1,74 @@
+
+
+.footer_top.footer_top_full {
+    padding: 4% 3%;
+    text-align: center;
+}
+
+.four_columns>.column1>.column_inner,
+.four_columns>.column2>.column_inner,
+.four_columns>.column3>.column_inner,
+.four_columns>.column4>.column_inner {
+    padding: 0 17%;
+}
+
+.qode_twitter_widget li .tweet_icon_holder {
+    display: none;
+}
+
+footer .wpcf7 .qodef-subscription-form .wpcf7-form-control.wpcf7-text {
+    font-size: 12px;
+    color: #7e7e7e;
+    letter-spacing: 0.2px;
+    font-weight: 300;
+}
+
+footer .qodef-subscription-form input.wpcf7-form-control.wpcf7-submit {
+    background-color: #303030;
+    border-color: #303030;
+}
+
+footer .qodef-subscription-form input.wpcf7-form-control.wpcf7-submit:hover {
+    background-color: #777777;
+    color: #ffffff;
+    border-color: #777777;
+}
+
+.blog_holder.masonry_full_width article .post_info a:hover {
+    color: #161616;
+}
+
+
+.blog_holder article.format-link .post_text .post_text_inner:hover .post_info a,
+.blog_holder article.format-quote .post_text .post_text_inner:hover .post_info a,
+.blog_holder.masonry_full_width article.format-link .post_text .post_text_inner:hover .post_author > a,
+.blog_holder.masonry_full_width article.format-quote .post_text .post_text_inner:hover .post_author > a,
+.blog_holder article.format-link .post_text .post_text_inner:hover .post_info,
+.blog_holder article.format-quote .post_text .post_text_inner:hover .post_info,
+.blog_holder.pinterest_full_width article.format-link .post_text .post_text_inner:hover .post_comments,
+.blog_holder.pinterest_full_width article.format-quote .post_text .post_text_inner:hover .post_comments,
+.blog_holder.masonry_full_width article.format-quote .post_text .post_text_inner:hover .post_author,
+.blog_holder.blog_single article.format-link .post_text .post_text_inner:hover .post_info a:hover,
+.blog_holder article.format-link .post_text .post_text_inner:hover .post_info a,
+.blog_holder article.format-link .post_text .post_text_inner:hover .post_info .time,
+.blog_holder.blog_single article.format-quote .post_text .post_text_inner:hover .post_info a:hover,
+.blog_holder article.format-quote .post_text .post_text_inner:hover .post_info a,
+.blog_holder article.format-quote .post_text .post_text_inner:hover .post_info .time,
+.blog_holder.masonry_full_width article.format-link .post_text .post_text_inner:hover .post_author {
+    color: #c7c7c7;
+}
+
+.qode_instagram_feed li a:hover:before {
+    opacity: 0.1;
+}
+
+div.comment_form {
+    margin: 0 0 65px;
+}
+
+#respond textarea {
+	margin: 0 0 19px 0;
+}
+#commentform .three_columns {
+	margin-bottom: 10px;
+}
