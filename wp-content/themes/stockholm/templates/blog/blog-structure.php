@@ -108,7 +108,6 @@
 
 ?>
 
-
 <div class="blog_holder <?php echo esc_attr($blog_list_class); ?> <?php echo esc_attr($blog_loading_class); ?>">
 	<?php  if(have_posts()) : while ( have_posts() ) : the_post(); ?>
 		<?php

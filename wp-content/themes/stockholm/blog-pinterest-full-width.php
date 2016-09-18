@@ -18,8 +18,8 @@ elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
 else { $paged = 1; }
 $page_object = get_post( $id );
 $q_content = $page_object->post_content;
-$q_content = apply_filters( 'the_content', $q_content );
 
+$q_content = apply_filters( 'the_content', $q_content );
 $sidebar = get_post_meta($id, "qode_show-sidebar", true);
 
 if(get_post_meta($id, "qode_page_background_color", true) != ""){
@@ -45,6 +45,8 @@ $category_filter = "no";
 if(isset($qode_options['blog_masonry_filter'])){
 	$category_filter = $qode_options['blog_masonry_filter'];
 }
+//$category_filter = "yes";
+
 $container_inner_class = "";
 if($category_filter == "yes"){
 	$container_inner_class = " full_page_container_inner";
