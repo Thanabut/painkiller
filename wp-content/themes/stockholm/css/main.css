@@ -53,3 +53,6 @@
 .menu-painkiller p:hover {
   color: black;
 }
+nav.mobile_menu {
+  background-color: transparent;
+}

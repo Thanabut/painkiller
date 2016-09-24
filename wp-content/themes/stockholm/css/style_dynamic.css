@@ -416,6 +416,15 @@ nav.main_menu > ul > li > a{
 }
 
 
+    .drop_down .second .inner ul,
+    .drop_down .second .inner ul li ul,
+	.shopping_cart_dropdown,
+    li.narrow .second .inner ul {
+    background-color: #ffffff;
+    background-color: rgba(255,255,255,0);
+    }
+
+
 
 
 nav.main_menu > ul > li > a{
@@ -987,10 +996,18 @@ header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a{
 
 
 
+	
+    .projects_holder article .portfolio_shader, .projects_masonry_holder article .portfolio_shader, .portfolio_slides .portfolio_shader{
+        background-color: rgba(255,255,255,0.5);
+    }
 
 		
 
 
+    .portfolio_single.big-slider .portfolio_container, .portfolio_single.big-images .portfolio_container, .portfolio_single.gallery .portfolio_container{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 
 
 
@@ -1007,7 +1024,13 @@ header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a{
 
 
 
+	.portfolio_social_holder .social_share_list_holder ul li i{
+	 color: #000000;
+	}
 
+	.portfolio_social_holder .social_share_list_holder ul li i:hover{
+	color: #878787;
+	}
 
 
 
