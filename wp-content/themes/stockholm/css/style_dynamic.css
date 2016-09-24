@@ -275,6 +275,29 @@
 		
 
 
+.header_bottom,
+.header_top {
+	background-color: rgba(255,255,255,0);
+}
+
+
+.header_bottom,
+.header_top {
+    border-bottom: 0;
+}
+
+.header_bottom {
+    box-shadow: none;
+}
+
+.header_top .right .inner > div:first-child,
+.header_top .right .inner > div,
+.header_top .left .inner > div:last-child,
+.header_top .left .inner > div {
+    border: none;
+}
+
+
 
 
 	.content .content_inner > .container > .container_inner,
@@ -302,7 +325,14 @@
 
 
 
+header.sticky .header_bottom{
+	background-color: rgba(255,255,255,1) !important;
+}
 
+
+.header_top{
+	background-color: rgba(255,255,255,0);
+}
 
 
 

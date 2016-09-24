@@ -1,3 +1,38 @@
+@screen-xs: 480px;
+@screen-sm: 768px;
+@screen-md: 992px;
+@screen-lg: 1200px;
+@screen-xs-min: 480px;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+@screen-vxs-max: 479px;
+@screen-xs-max: 767px;
+@screen-sm-max: 991px;
+@screen-md-max: 1200px;
+
+//main layout css
+@media (max-width: @screen-vxs-max){
+	//mobile smaller than 480
+
+}
+@media (min-width: @screen-xs-min) and (max-width: @screen-xs-max){
+	//bootstrap xs
+	
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+	//bootstrap sm
+
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max){
+	//bootstrap md
+
+}
+@media (min-width: @screen-lg-min){
+	//bootstrap lg
+
+}
+
 @nav-bar-height: 110px;
 .content_bottom{
 	.container_inner{
@@ -53,184 +88,3 @@
 	}
 }
 
-.page-header{
-	width: 95%;
-	margin: 0 auto;
-	height: 630px;
-	@media only screen  and (min-width : 1824px) {
-		height: 730px;
-	}
-	@media only screen and (min-width: 992px) and (max-width: 1199px){
-		height: 530px;
-	}
-	@media only screen and (min-width: 768px) and (max-width: 991px){
-		height: 480px;
-	}
-	@media only screen and (min-width: 480px) and (max-width: 767px){
-		height: 420px;
-	}
-	@media only screen and (max-width: 479px){
-		height: 420px;
-	}
-	.header-wrapper{
-		position: relative;
-		height: 100%;
-		div{
-			position: absolute;
-			display: inline-block;
-			> img{
-			}
-			&.img-1{
-				top: 0;
-				left: 0;
-				max-height: 250px;
-			    max-width: 29%;
-			}
-			&.img-2{
-				bottom: 0;
-				left: 0;
-				right: 0;
-				margin: 0 auto;
-				max-width: 24%;
-			}
-			&.img-3{
-				right: 0;
-				max-width: 29%;
-			}
-			&.header-logo{
-				left: 0;
-				right: 0;
-				margin: 0 auto;
-				max-width: 10%;
-			}
-			&.header-main-title{
-				max-width: 30%;
-				background: #fff;
-				padding: 15px 10px;
-				top: 40%;
-				h1{
-					line-height: 40px;
-					font-size: 2.3em;
-				}
-			}
-			@media only screen  and (min-width : 1824px) {
-				&.img-1{
-				    max-width: 23%;
-				}
-				&.img-2{
-					max-width: 25%;
-				}
-				&.img-3{
-					max-width: 29%;
-				}
-				&.header-logo{
-					max-width: 13%;
-				}
-				&.header-main-title{
-					max-width: 30%;
-					padding: 15px 10px;
-					top: 40%;
-					h1{
-						line-height: 40px;
-						font-size: 2.3em;
-					}
-				}
-			}
-			@media only screen and (min-width: 992px) and (max-width: 1199px){
-				&.img-1{
-				    max-width: 27%;
-				}
-				&.img-2{
-					max-width: 26%;
-				}
-				&.img-3{
-					max-width: 27%;
-				}
-				&.header-logo{
-					max-width: 13%;
-				}
-				&.header-main-title{
-					background: #fff;
-					padding: 15px 10px;
-					top: 40%;
-					h1{
-						line-height: 40px;
-						font-size: 2.3em;
-					}
-				}
-			}
-
-			@media only screen and (min-width: 768px) and (max-width: 991px){
-				&.img-1{
-				    max-width: 27%;
-				}
-				&.img-2{
-					max-width: 26%;
-				}
-				&.img-3{
-					max-width: 27%;
-				}
-				&.header-logo{
-					max-width: 13%;
-				}
-				&.header-main-title{
-					background: #fff;
-					padding: 15px 10px;
-					top: 40%;
-					h1{
-						line-height: 40px;
-						font-size: 2.3em;
-					}
-				}
-			}
-
-			@media only screen and (min-width: 480px) and (max-width: 767px){
-				&.img-1{
-				    max-width: 31%;
-				}
-				&.img-2{
-					max-width: 26%;
-				}
-				&.img-3{
-					max-width: 31%;
-				}
-				&.header-logo{
-					max-width: 13%;
-				}
-				&.header-main-title{
-					background: #fff;
-					padding: 15px 10px;
-					top: 40%;
-					h1{
-						line-height: 40px;
-						font-size: 2.3em;
-					}
-				}
-			}
-
-			@media only screen and (max-width: 479px){
-				&.img-1{
-				    max-width: 27%;
-				}
-				&.img-2{
-					max-width: 21%;
-				}
-				&.img-3{
-					max-width: 24%;
-				}
-				&.header-logo{
-					max-width: 13%;
-				}
-				&.header-main-title{
-					background: #fff;
-					padding: 15px 10px;
-					top: 40%;
-					h1{
-						line-height: 40px;
-						font-size: 2.3em;
-					}
-				}
-			}
-		}
-	}
-}
