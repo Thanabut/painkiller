@@ -275,6 +275,29 @@
 		
 
 
+.header_bottom,
+.header_top {
+	background-color: rgba(255,255,255,0);
+}
+
+
+.header_bottom,
+.header_top {
+    border-bottom: 0;
+}
+
+.header_bottom {
+    box-shadow: none;
+}
+
+.header_top .right .inner > div:first-child,
+.header_top .right .inner > div,
+.header_top .left .inner > div:last-child,
+.header_top .left .inner > div {
+    border: none;
+}
+
+
 
 
 	.content .content_inner > .container > .container_inner,
@@ -302,7 +325,14 @@
 
 
 
+header.sticky .header_bottom{
+	background-color: rgba(255,255,255,1) !important;
+}
 
+
+.header_top{
+	background-color: rgba(255,255,255,0);
+}
 
 
 
@@ -956,7 +986,24 @@ header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a{
 
 
 
+	.projects_holder article .portfolio_description{
+		background-color: transparent;
+	}
 
+	.projects_holder.standard article .portfolio_description, 
+	.projects_holder.standard_no_space article .portfolio_description {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.masonry_with_space .projects_holder article .portfolio_description {
+		padding: 35px 0 43px;
+	}
+
+	
+    .projects_holder article .portfolio_shader, .projects_masonry_holder article .portfolio_shader, .portfolio_slides .portfolio_shader{
+        background-color: rgba(255,255,255,2);
+    }
 
 		
 
