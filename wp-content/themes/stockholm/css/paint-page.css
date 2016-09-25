@@ -1,0 +1,28 @@
+.paint {
+  padding-top: 30px;
+}
+.paint .paint-page {
+  width: 100%;
+  position: relative;
+}
+.paint .paint-page .paint-menu-wrapper {
+  width: 19%;
+  display: inline-block;
+}
+.paint .paint-page .paint-menu-wrapper .paint-menu {
+  font-size: 16px;
+  position: fixed;
+  top: 50%;
+  text-align: left;
+  color: black;
+}
+.paint .paint-page .paint-menu-wrapper .paint-menu p:hover {
+  color: black;
+}
+.paint .paint-page .paint-menu-wrapper .paint-menu ul {
+  list-style: none;
+}
+.paint .paint-page .paint-content {
+  width: 80%;
+  display: inline-block;
+}
