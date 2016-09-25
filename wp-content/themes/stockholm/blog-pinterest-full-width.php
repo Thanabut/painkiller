@@ -11,7 +11,6 @@ global $qode_page_id;
 $qode_page_id = $wp_query->get_queried_object_id();
 $id = $wp_query->get_queried_object_id();
 $qode_template_name = get_page_template_slug($id);
-echo $qode_template_name;
 $category = get_post_meta($id, "qode_choose-blog-category", true);
 $post_number = get_post_meta($id, "qode_show-posts-per-page", true);
 if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
@@ -62,11 +61,12 @@ if($category_filter == "yes"){
 		<?php get_template_part( 'title' ); ?>
 
 	<?php
-		
+		get_template_part('templates/painkiller/homepage-header');
+
 		$revslider = get_post_meta($id, "qode_revolution-slider", true);
 		if (!empty($revslider)){ ?>
 			<div class="q_slider"><div class="q_slider_inner">
-			<?php echo do_shortcode($revslider); ?>
+			<?php //echo do_shortcode($revslider); ?>
 			</div></div>
 		<?php
 		}

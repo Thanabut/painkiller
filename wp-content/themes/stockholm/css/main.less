@@ -1,4 +1,39 @@
+@screen-xs: 480px;
+@screen-sm: 768px;
+@screen-md: 992px;
+@screen-lg: 1200px;
+@screen-xs-min: 480px;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+@screen-vxs-max: 479px;
+@screen-xs-max: 767px;
+@screen-sm-max: 991px;
+@screen-md-max: 1200px;
 
+//main layout css
+@media (max-width: @screen-vxs-max){
+	//mobile smaller than 480
+
+}
+@media (min-width: @screen-xs-min) and (max-width: @screen-xs-max){
+	//bootstrap xs
+	
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+	//bootstrap sm
+
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max){
+	//bootstrap md
+
+}
+@media (min-width: @screen-lg-min){
+	//bootstrap lg
+
+}
+
+@nav-bar-height: 110px;
 .content_bottom{
 	.container_inner{
 		width:100%;
@@ -24,20 +59,20 @@
 
 .header-painkiller-content{
 	position: relative;
-		background-color: rgba(0, 0, 0, 0);
-	    background-repeat: no-repeat;
-	    background-image: url(http://stockholm7.select-themes.com/wp-content/uploads/2016/04/slide-2.jpg);
-	    background-size: cover;
-	    background-position: center center;
-	    width: 100%;
-	    height: 500px;
-	    opacity: 1;
-	    visibility: inherit;
-	    z-index: 20;
-	    @media only screen and (max-width: 600px){
-	    	height: 300px;
-	    }
-	}
+	background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-image: url(http://stockholm7.select-themes.com/wp-content/uploads/2016/04/slide-2.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 500px;
+    opacity: 1;
+    visibility: inherit;
+    z-index: 20;
+    @media only screen and (max-width: 600px){
+    	height: 300px;
+    }
+}
 
 
 .menu-painkiller{
@@ -51,5 +86,9 @@
 	p:hover { 
 		color: black;
 	}
+}
+
+nav.mobile_menu{
+	background-color: transparent;
 }
 

@@ -416,6 +416,15 @@ nav.main_menu > ul > li > a{
 }
 
 
+    .drop_down .second .inner ul,
+    .drop_down .second .inner ul li ul,
+	.shopping_cart_dropdown,
+    li.narrow .second .inner ul {
+    background-color: #ffffff;
+    background-color: rgba(255,255,255,0);
+    }
+
+
 
 
 nav.main_menu > ul > li > a{
