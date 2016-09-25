@@ -48,8 +48,8 @@ foreach ($portfolio_categories as $portfolio_category) {
 			<div class="header-painkiller-content"> 
 				<div class="menu-painkiller"> 
 					<a href=""> <p> S/S16 LAND BEFORE TIME </p> </a>
-					<a href=""> <p> Archive </p> </a>
-					<a href=""> <p> View collection by print </p> </a>
+					<a href="<?php echo get_site_url().'/archive' ?>"> <p> Archive </p> </a>
+					<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
 			    </div>
 			</div>
 		</div>

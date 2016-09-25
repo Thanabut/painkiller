@@ -7,7 +7,10 @@ if(isset($qode_options['portfolio_hide_categories'])) {
 }
 
 $portfolio_categories = wp_get_post_terms(get_the_ID(),'portfolio_category');
-$portfolio_categories = get_the_category(get_the_ID());
+if(empty($portfolio_categories)){
+	$portfolio_categories = get_the_category(get_the_ID());
+}
+
 
 if(is_array($portfolio_categories) && count($portfolio_categories) && $portfolio_hide_categories != "yes"){
 

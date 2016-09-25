@@ -13,7 +13,6 @@ if(get_post_meta($id, "qode_page_background_color", true) != ""){
 }else{
 	$background_color = "";
 }
-$minttttt;
 $content_style = "";
 if(get_post_meta($id, "qode_content-top-padding", true) != ""){
 	if(get_post_meta($id, "qode_content-top-padding-mobile", true) == "yes"){
@@ -29,6 +28,7 @@ else { $paged = 1; }
 
 ?>
 	<?php get_header(); ?>
+	
 		<?php if(get_post_meta($id, "qode_page_scroll_amount_for_sticky", true)) { ?>
 			<script>
 			var page_scroll_amount_for_sticky = <?php echo get_post_meta($id, "qode_page_scroll_amount_for_sticky", true); ?>;
@@ -44,11 +44,52 @@ else { $paged = 1; }
 				</div>
 			</div>
 		<?php
-		}
+		} 
 		?>
+		
 		<div class="container"<?php if($background_color != "") { echo " style='background-color:". $background_color ."'";} ?>>
 			<div class="container_inner default_template_holder clearfix" <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
 				<?php if(($sidebar == "default")||($sidebar == "")) : ?>
+							<?php
+
+				$pagename = get_query_var('pagename');  
+				if ( !$pagename && $id > 0 ) {  
+				    // If a static page is set as the front page, $pagename will not be set. Retrieve it from the queried object  
+				    $post = $wp_query->get_queried_object();  
+				    $pagename = $post->post_name;  
+				}
+
+
+				if($pagename === 'view-by-print'){
+					?>
+					<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/paint-page.css">
+
+					<style type="text/css">
+						header{
+							position: fixed;
+						}
+						
+					</style>
+
+					<div class="paint">
+						<div class="paint-page"> 
+							<div class="paint-menu-wrapper"> 
+								<div class="paint-menu">
+								<ul>
+									<li>
+										<a href=""> <p> S/S16 LAND BEFORE TIME </p> </a>
+									</li>
+									<li>
+										<a href="<?php echo get_site_url().'/archive' ?>"> <p> Archive </p> </a>
+									</li>
+									<li>
+										<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
+									</li>
+								</ul>
+								</div>
+						    </div>
+						    <div class='paint-content'>
+
 					<?php if (have_posts()) : 
 							while (have_posts()) : the_post(); ?>
 							<?php the_content(); ?>
@@ -67,6 +108,32 @@ else { $paged = 1; }
 							?> 
 							<?php endwhile; ?>
 						<?php endif; ?>
+
+						    </div>
+						</div>
+					</div>
+				<?php }else{ ?>
+					<?php if (have_posts()) : 
+							while (have_posts()) : the_post(); ?>
+							<?php the_content(); ?>
+							<?php 
+								$args_pages = array(
+									'before'           => '<p class="single_links_pages">',
+									'after'            => '</p>',
+									'pagelink'         => '<span>%</span>'
+								);
+								wp_link_pages($args_pages);
+							?>
+							<?php
+							if($enable_page_comments){
+								comments_template('', true); 
+							}
+							?> 
+							<?php endwhile; ?>
+						<?php endif; ?>
+
+				<?php }
+			?>
 				<?php elseif($sidebar == "1" || $sidebar == "2"): ?>		
 					
 					<?php if($sidebar == "1") : ?>	
