@@ -3281,7 +3281,11 @@ if (!function_exists('portfolio_list')) {
 
 				$html .= "</div>";
 
-				if (($type == "standard" || $type == "standard_no_space" )) {
+				$page = split('/',$_SERVER["REQUEST_URI"])[2];
+				if (( $type == "masonry_with_space") && ($pinterest_hover_type != "info_on_hover") && ($page == 'view-by-print')) {				
+				}
+
+				if (($type == "standard" || $type == "standard_no_space" || ( $type == "masonry_with_space" && $pinterest_hover_type != "info_on_hover" && $page != 'view-by-print') )) {
 					$html .= "<div class='portfolio_description ".$portfolio_description_class."'". $portfolio_box_style .">";
 
 					$title_style = '';
@@ -3313,9 +3317,8 @@ if (!function_exists('portfolio_list')) {
 					$html .= '</div>';
 				}
 
-				if (( $type == "masonry_with_space") && ($pinterest_hover_type != "info_on_hover")) {
-					
-				}
+
+				
 
 				$html .= "</article>\n";
 

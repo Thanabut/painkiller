@@ -2113,3 +2113,4 @@ if(!function_exists('qode_attachment_field_custom_size_save')) {
 }
 
 add_filter( 'attachment_fields_to_save', 'qode_attachment_field_custom_size_save', 10, 2 );
+

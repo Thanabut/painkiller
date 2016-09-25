@@ -61,7 +61,10 @@ if($category_filter == "yes"){
 		<?php get_template_part( 'title' ); ?>
 
 	<?php
-		get_template_part('templates/painkiller/homepage-header');
+		$page = split('/',$_SERVER["REQUEST_URI"])[2];
+		if($pagename !== 'archive'){
+			get_template_part('templates/painkiller/homepage-header');
+		}
 
 		$revslider = get_post_meta($id, "qode_revolution-slider", true);
 		if (!empty($revslider)){ ?>
@@ -84,8 +87,46 @@ if($category_filter == "yes"){
 		<div class="full_width_inner<?php echo esc_attr($container_inner_class); ?>" <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
 			<?php
 				print $q_content;
-				get_template_part('templates/blog/blog', 'structure');
-			?>
+				$page = split('/',$_SERVER["REQUEST_URI"])[2];
+				if($pagename === 'archive'){
+					?>
+					<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/paint-page.css">
+
+					<style type="text/css">
+						header{
+							position: fixed;
+						}
+						
+					</style>
+
+					<div class="paint">
+						<div class="paint-page"> 
+							<div class="paint-menu-wrapper"> 
+								<div class="paint-menu">
+								<ul>
+									<li>
+										<a href=""> <p> S/S16 LAND BEFORE TIME </p> </a>
+									</li>
+									<li>
+										<a href="<?php echo get_site_url().'/archive' ?>"> <p> Archive </p> </a>
+									</li>
+									<li>
+										<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
+									</li>
+								</ul>
+								</div>
+						    </div>
+						    <div class='paint-content col-masonry'>
+
+					 <?php get_template_part('templates/blog/blog', 'structure'); ?>
+
+						    </div>
+						</div>
+					</div>
+				<?php } else { 
+
+				get_template_part('templates/blog/blog', 'structure'); 
+			} ?>
 		</div>
 	</div>
 <?php wp_reset_query(); ?>
