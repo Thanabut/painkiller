@@ -3282,7 +3282,7 @@ if (!function_exists('portfolio_list')) {
 				$html .= "</div>";
 
 				$page = split('/',$_SERVER["REQUEST_URI"])[2];
-				if (( $type == "masonry_with_space") && ($pinterest_hover_type != "info_on_hover") && ($page == 'view-by-print')) {				
+				if (( $type == "masonry_with_space") && ($pinterest_hover_type != "info_on_hover") && ($page == 'view-by-print')) {			
 				}
 
 				if (($type == "standard" || $type == "standard_no_space" || ( $type == "masonry_with_space" && $pinterest_hover_type != "info_on_hover" && $page != 'view-by-print') )) {

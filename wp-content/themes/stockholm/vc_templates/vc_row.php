@@ -264,6 +264,7 @@ if($row_type == 'row') {
 		$output .= ($section_height != '' || $section_height != ' ') ? ' height:' . $section_height . 'px;' : '';
 	}
     $output .= ($background_image !== '' || $background_image !== ' ') ? " background-image:url('" . $_image[0] . "');" : "";
+    $output .= 'background-size: cover;';
     $output .= '"';
     $output .= '>';
 	if($full_screen_section_height == 'yes' ) {
