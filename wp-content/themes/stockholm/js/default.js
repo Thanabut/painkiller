@@ -28,12 +28,17 @@ var video_height_original = 720;
 var vid_ratio = 1280/720;
 var skrollr_slider;
 
+function getWidth(){
+	if($j('.col-masonry').length){
+		var width_blog = $j('.col-masonry').width();
+	}
+	return $j(window).width();
+}
+
 if($j('.portfolio_single_sticky').length){
 	var stickyInfoTopOffset;
 	var stickyInfoHeight;
 }
-
-
 
 $j(document).ready(function() {
 	"use strict";
@@ -138,8 +143,9 @@ $j(document).ready(function() {
 		contentMenuPosition();
 	}
 	contentMenuCheckLastSection();
-
+	
 	initFullScreenTemplate();
+	initBlogMasonryFullWidth();	
 });
 
 $j(window).load(function(){
@@ -3208,8 +3214,13 @@ function initBlogMasonryFullWidth(){
 	"use strict";
 
 	if($j('.masonry_full_width').length){
-		var width_blog = $j('.full_width_inner').width();
-
+		if($j('.col-masonry').length){
+			var width_blog = $j('.col-masonry').width();
+			// console.log("blog" +width_blog);
+		}else{
+			var width_blog = $j('.full_width_inner').width();
+		}
+		
 		$j('.masonry_full_width').width(width_blog);
 		var $container = $j('.masonry_full_width');
 
@@ -3217,12 +3228,25 @@ function initBlogMasonryFullWidth(){
 		if($j('.masonry_full_width').hasClass('pinterest_full_width')) {
 			var $cols = 4;
 
-			if($container.width() < 480) {
-				$cols = 1;
-			} else if($container.width() <= 950) {
-				$cols = 2;
-			} else if($container.width() <= 1320) {
-				$cols = 3;
+			if($j('.col-masonry').length){
+				var width_col = $j('.col-masonry').width();
+				// console.log(width_col);
+				if(width_col < 480) {
+					$cols = 1;
+				} else if(width_col <= 776) {
+					$cols = 2;
+				
+				} else if(width_col <= 1068) {
+					$cols = 3;
+				}
+			}else{
+				if($container.width() < 480) {
+					$cols = 1;
+				} else if($container.width() <= 950) {
+					$cols = 2;
+				} else if($container.width() <= 1320) {
+					$cols = 3;
+				}
 			}
 
 
