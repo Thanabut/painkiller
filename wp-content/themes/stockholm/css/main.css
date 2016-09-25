@@ -56,3 +56,17 @@
 nav.mobile_menu {
   background-color: transparent;
 }
+.form-row .half {
+  display: inline-block;
+  width: 50%;
+  float: left;
+}
+.form-row .half input {
+  width: 98%;
+}
+.form-row .half:first-child {
+  text-align: left;
+}
+.form-row .half:last-child {
+  text-align: right;
+}
