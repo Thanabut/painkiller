@@ -8,6 +8,9 @@
 }
 @media (min-width: 1200px) {
 }
+.no-padding-top {
+  padding-top: 0px !important;
+}
 .content_bottom .container_inner {
   width: 100%;
 }

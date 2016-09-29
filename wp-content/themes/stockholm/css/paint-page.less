@@ -1,17 +1,30 @@
 .paint{
 	padding-top: 30px;
+	@media (max-width: 768px){
+		padding-top: 0px;
+		padding-left: 50px;
+	}
 	.paint-page{
 		width: 100%;
 		position: relative;
 	    .paint-menu-wrapper{
 			width: 19%;
 			display: inline-block;
+			@media (max-width: 576px){
+				display: initial;
+			}
 		    .paint-menu{
 				font-size: 16px;
 				position: fixed;
 				top: 50%;
 				text-align: left;
 				//padding-top: 50%;
+				@media (max-width: 768px){
+					left: 5%;
+				}
+				@media (max-width: 576px){
+					position: inherit;
+				}
 				color: black;
 				p:hover { 
 					color: black;
@@ -31,3 +44,10 @@
 	
 }
 
+@media (max-width: 768px){
+	.paint-content{
+		.filter_holder {
+		    display: none;
+		}
+	}
+}

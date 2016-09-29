@@ -62,7 +62,11 @@ if($category_filter == "yes"){
 
 	<?php
 		$page = split('/',$_SERVER["REQUEST_URI"])[2];
-		if($pagename !== 'archive'){
+		$css_class = '';
+		if($page === 'archive'){
+			$css_class = 'no-padding-top';
+		}
+		if($page !== 'archive'){
 			get_template_part('templates/painkiller/homepage-header');
 		}
 
@@ -87,8 +91,7 @@ if($category_filter == "yes"){
 		<div class="full_width_inner<?php echo esc_attr($container_inner_class); ?>" <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
 			<?php
 				print $q_content;
-				$page = split('/',$_SERVER["REQUEST_URI"])[2];
-				if($pagename === 'archive'){
+				if($page === 'archive'){
 					?>
 					<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/paint-page.css">
 
