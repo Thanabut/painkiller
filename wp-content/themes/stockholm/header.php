@@ -42,6 +42,7 @@ global $wp_query;
 	<![endif]-->
 
 	<?php wp_head(); ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/dotbackground.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/main.css">
 </head>
 
