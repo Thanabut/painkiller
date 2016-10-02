@@ -1,0 +1,36 @@
+@bg-size: 16px;
+@main-bg-color: #f7f7f7;
+
+
+.dot-bg(){
+	background-color: @main-bg-color;
+  	background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  	background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  	background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  	background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  	-webkit-background-size: @bg-size @bg-size;
+  	-moz-background-size: @bg-size @bg-size;
+  	background-size: @bg-size @bg-size;
+}
+
+body, 
+body>.wrapper,
+body>.wrapper>.wrapper_inner,
+body>.wrapper>.wrapper_inner>.content,
+body>.wrapper>.wrapper_inner>.content>.content_inner,
+body>.wrapper>.wrapper_inner>.content>.content_inner>.full_width,
+body>.wrapper>.wrapper_inner>.content>.content_inner>.q_slider,
+body>.wrapper>.wrapper_inner>.content>.content_inner>.page-header,
+body>.wrapper>.wrapper_inner>.content>.content_inner>.container,
+{
+	.dot-bg;
+			
+}
+
+body>.wrapper>.wrapper_inner>footer,
+body>.wrapper>.wrapper_inner>footer>.footer_inner,
+body>.wrapper>.wrapper_inner>footer>.footer_inner>.footer_top_holder>.footer_top,
+body>.wrapper>.wrapper_inner>footer>.footer_inner>.footer_bottom_holder,
+{
+	background: white;
+}
