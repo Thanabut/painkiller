@@ -49,7 +49,9 @@ foreach ($portfolio_categories as $portfolio_category) {
 				<div class="menu-painkiller"> 
 					<a href=""> <p> S/S16 LAND BEFORE TIME </p> </a>
 					<a href="<?php echo get_site_url().'/archive' ?>"> <p> Archive </p> </a>
+					<?php if($portfolio_category->name === 'Painkiller'){?>
 					<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
+					<?php } ?>
 			    </div>
 			</div>
 		</div>
