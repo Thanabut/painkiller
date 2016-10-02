@@ -36,11 +36,16 @@ if ($filter == "yes" && count($categories) > 0) {	?>
 			<div class="filter_outer">
 				<div class="filter_holder <?php echo esc_attr($blog_masnory_filter_class); ?>">
 					<ul>
-						<li class='filter_title'><span><?php _e('Sort Blog:', 'qode'); ?></span></li>
+						<!--<li class='filter_title'><span><?php _e('Sort Blog:', 'qode'); ?>
+						<!--</span></li> -->
 						<li class="filter" data-filter="*"><span><?php _e('All', 'qode'); ?></span></li>
-						<?php foreach ($categories as $category) { ?>
-							 <li class="filter" data-filter="<?php echo esc_attr(".category-" . $category->slug); ?>"><span><?php echo esc_html($category->name); ?></span></li>
-						<?php } ?>
+						<?php foreach ($categories as $category) { 
+								if($category->term_id !== 1){
+							?>
+							 	<li class="filter" data-filter="<?php echo esc_attr(".category-" . $category->slug); ?>"><span><?php echo esc_html($category->name); ?></span></li>
+						<?php 	}
+							}
+						?>
 					</ul>
 				</div>
 			</div>
