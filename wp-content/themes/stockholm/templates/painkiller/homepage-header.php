@@ -2,7 +2,7 @@
 
 
 ?>
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/header-front-page.css">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/header-front-page.css?v=1.1">
 
 <div class="page-header">
 	<div class="header-wrapper">
