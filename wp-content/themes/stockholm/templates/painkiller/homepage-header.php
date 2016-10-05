@@ -7,14 +7,23 @@
 <div class="page-header">
 	<div class="header-wrapper">
 		<div class="img-1">
+			<div class="side-text">
+				Painkiller recent collection
+			</div>
 			<img src="<?php echo get_template_directory_uri();?>/img/21.jpg">
 			<p>Painkiller</p>
 		</div>
 		<div class="img-2">
+			<div class="side-text">
+				Archive collection
+			</div>
 			<img src="<?php echo get_template_directory_uri();?>/img/11.jpg">
 			<p>Archive</p>
 		</div>
 		<div class="img-3">
+			<div class="side-text">
+				Mister painkiller
+			</div>
 			<img src="<?php echo get_template_directory_uri();?>/img/MRPK01-09.jpg" alt="">
 			<p>Mister Painkiller</p>
 		</div>
