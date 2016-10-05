@@ -23,11 +23,23 @@
 			display: inline-block;
 			> img{
 			}
+			.side-text{
+				font-size: large;
+			}
 			&.img-1{
 				top: 0;
 				left: 0;
 				max-height: 250px;
 			    max-width: 29%;
+			    .side-text{
+			    	@degree: -90deg;
+			    	-ms-transform: rotate(@degree);
+			    	-webkit-transform: rotate(@degree);
+			    	transform: rotate(@degree);
+			    	right: -135px;
+    				top: 106px;
+
+			    }
 			}
 			&.img-2{
 				bottom: 0;
@@ -35,10 +47,19 @@
 				right: 0;
 				margin: 0 auto;
 				max-width: 24%;
+				.side-text{
+					bottom: 10px;
+    				left: -164px;
+				    z-index: 10;
+				}
 			}
 			&.img-3{
 				right: 0;
 				max-width: 29%;
+				.side-text{
+					bottom: -21px;
+				    right: 0;
+				}
 			}
 			&.header-logo{
 				left: 0;
@@ -190,6 +211,10 @@
 				h1{
 					font-size: 2.3em;
 				}
+			}
+
+			.side-text{
+				display: none;
 			}
 
 			p{

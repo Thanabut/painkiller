@@ -42,7 +42,9 @@ global $wp_query;
 	<![endif]-->
 
 	<?php wp_head(); ?>
+	<?php if(is_front_page() ): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/dotbackground.css">
+	<?php endif ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/main.css">
 </head>
 
