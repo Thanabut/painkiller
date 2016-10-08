@@ -61,6 +61,9 @@ else { $paged = 1; }
 
 
 				if($pagename === 'view-by-print'){
+					$recent_posts = wp_get_recent_posts();
+					
+					
 					?>
 					<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/paint-page.css">
 
@@ -77,10 +80,10 @@ else { $paged = 1; }
 								<div class="paint-menu">
 								<ul>
 									<li>
-										<a href=""> <p> S/S16 LAND BEFORE TIME </p> </a>
+										<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> S/S16 LAND BEFORE TIME </p> </a>
 									</li>
 									<li>
-										<a href="<?php echo get_site_url().'archieve-painkiller' ?>"> <p> Archive </p> </a>
+										<a href="<?php echo get_site_url().'/archieve-painkiller' ?>"> <p> Archive </p> </a>
 									</li>
 									<li>
 										<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
