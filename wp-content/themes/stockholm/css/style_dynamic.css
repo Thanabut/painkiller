@@ -404,7 +404,7 @@ header.sticky .header_bottom{
         @media only screen and (min-width: 1000px){
             header.fixed_hiding .q_logo a,
             header.fixed_hiding .q_logo{
-                max-height: 0px;
+                max-height: 80px;
             }
         }
     
