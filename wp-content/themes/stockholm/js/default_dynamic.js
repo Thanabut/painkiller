@@ -32,6 +32,9 @@ var add_for_admin_bar = 0;
 	scroll_amount_for_sticky = 200;
 var logo_height = 130; // stockholm logo height
 var logo_width = 280; // stockholm logo width
+	logo_height = 160;
+	logo_width = 304;
+	
 	header_top_height = 0;
 
 
