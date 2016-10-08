@@ -1,6 +1,8 @@
 <?php
 
+
 $id = get_the_ID();
+
 
 
 $chosen_sidebar = get_post_meta(get_the_ID(), "qode_show-sidebar", true);
@@ -47,11 +49,13 @@ foreach ($portfolio_categories as $portfolio_category) {
 		<div class="header-painkiller">
 			<div class="header-painkiller-content"> 
 				<div class="menu-painkiller"> 
-					<a href=""> <p> S/S16 LAND BEFORE TIME </p> </a>
 					<?php if($portfolio_category->name === 'Painkiller'){ ?>
+					<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> S/S16 LAND BEFORE TIME </p> </a>
+					
 					<a href="<?php echo get_site_url().'/archieve-painkiller' ?>"> <p> Archive </p> </a>
 					<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
 					<?php }else{ ?>
+						<a href="<?php echo get_site_url().'/latest-mister-painkiller' ?>"> <p> S/S16 LAND BEFORE TIME </p> </a>
 						<a href="<?php echo get_site_url().'/archieve-mister-painkiller' ?>"> <p> Archive </p> </a>
 					<?php } ?>
 			    </div>

@@ -19,6 +19,7 @@ else { $paged = 1; }
 $page_object = get_post( $id );
 $q_content = $page_object->post_content;
 $page_archieve = '';
+$collection_page = '';
 
 $q_content = apply_filters( 'the_content', $q_content );
 $sidebar = get_post_meta($id, "qode_show-sidebar", true);
@@ -96,8 +97,10 @@ if($category_filter == "yes"){
 
 					if($page === 'archieve-painkiller'){
 						$page_archieve = '/archieve-painkiller';
+						$collection_page = '/latest-painkiller';
 					}else{
 						$page_archieve = '/archieve-mister-painkiller';
+						$collection_page = '/latest-mister-painkiller';
 					}
 					?>
 					<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/paint-page.css">
@@ -115,7 +118,7 @@ if($category_filter == "yes"){
 								<div class="paint-menu">
 								<ul>
 									<li>
-										<a href=""> <p> S/S16 LAND BEFORE TIME </p> </a>
+										<a href="<?php echo get_site_url().$collection_page ?>"> <p> S/S16 LAND BEFORE TIME </p> </a>
 									</li>
 									<li>
 										<a href="<?php echo get_site_url().$page_archieve ?>"> <p> Archive </p> </a>
