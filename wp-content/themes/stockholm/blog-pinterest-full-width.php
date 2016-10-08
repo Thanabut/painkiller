@@ -18,6 +18,7 @@ elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
 else { $paged = 1; }
 $page_object = get_post( $id );
 $q_content = $page_object->post_content;
+$page_archieve = '';
 
 $q_content = apply_filters( 'the_content', $q_content );
 $sidebar = get_post_meta($id, "qode_show-sidebar", true);
@@ -63,10 +64,10 @@ if($category_filter == "yes"){
 	<?php
 		$page = split('/',$_SERVER["REQUEST_URI"])[2];
 		$css_class = '';
-		if($page === 'archive'){
+		if($page === 'archieve-mister-painkiller' || $page === 'archieve-painkiller'){
 			$css_class = 'no-padding-top';
 		}
-		if($page !== 'archive'){
+		if($page !== 'archieve-mister-painkiller' && $page !== 'archieve-painkiller'){
 			get_template_part('templates/painkiller/homepage-header');
 		}
 
@@ -86,12 +87,18 @@ if($category_filter == "yes"){
 			$blog_page_range = $wp_query->max_num_pages;
 		}
 	?>
-
+	
 	<div class="full_width"<?php if($background_color != "") { echo " style='background-color:". $background_color ."'";} ?>>
 		<div class="full_width_inner<?php echo esc_attr($container_inner_class); ?>" <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
 			<?php
 				print $q_content;
-				if($page === 'archive'){
+				if($page === 'archieve-mister-painkiller' || $page === 'archieve-painkiller'){
+
+					if($page === 'archieve-painkiller'){
+						$page_archieve = '/archieve-painkiller';
+					}else{
+						$page_archieve = '/archieve-mister-painkiller';
+					}
 					?>
 					<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/paint-page.css">
 
@@ -111,11 +118,13 @@ if($category_filter == "yes"){
 										<a href=""> <p> S/S16 LAND BEFORE TIME </p> </a>
 									</li>
 									<li>
-										<a href="<?php echo get_site_url().'/archive' ?>"> <p> Archive </p> </a>
+										<a href="<?php echo get_site_url().$page_archieve ?>"> <p> Archive </p> </a>
 									</li>
+									<?php if($page === 'archieve-painkiller'){?>
 									<li>
 										<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
 									</li>
+									<?php } ?>
 								</ul>
 								</div>
 						    </div>
