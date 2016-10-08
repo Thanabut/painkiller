@@ -80,7 +80,7 @@ else { $paged = 1; }
 										<a href=""> <p> S/S16 LAND BEFORE TIME </p> </a>
 									</li>
 									<li>
-										<a href="<?php echo get_site_url().'/archive' ?>"> <p> Archive </p> </a>
+										<a href="<?php echo get_site_url().'archieve-painkiller' ?>"> <p> Archive </p> </a>
 									</li>
 									<li>
 										<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
