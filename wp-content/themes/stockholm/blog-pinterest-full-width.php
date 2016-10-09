@@ -161,5 +161,89 @@ if($category_filter == "yes"){
 			} ?>
 		</div>
 	</div>
+	<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+		  <div class="modal-content">
+		    <div class="modal-header">
+		      <span class="close">×</span>
+		      <h2>SHARE</h2>
+		    </div>
+		    <?php $share_id = ''; ?>
+		    <input type="hidden" class="share-id" id="share" value=""/>
+		    <div class="modal-body">
+		    <div id="shareBtn" class="btn btn-success clearfix">Fb Share</div>
+		     
+		    </div>
+		  </div>
+
+		</div>
 <?php wp_reset_query(); ?>
 <?php get_footer(); ?>
+<script>
+// Get the modal
+
+
+
+(function($) {
+	
+	$(document).ready(function(){
+		$.ajaxSetup({ cache: true });
+		  $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+		    FB.init({
+		      appId: '342131019456401',
+		      version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+		    });     
+		    // $('#loginbutton,#feedbutton').removeAttr('disabled');
+		    // FB.getLoginStatus(updateStatusCallback);
+		  });
+
+		var modal = document.getElementById('myModal');
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+
+		var btn = $('.share').data('id');
+		// console.log(btn);
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+		// When the user clicks the button, open the modal
+		btn.onclick = function() {
+		    modal.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		    modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		} 
+
+		$('.share').on('click', function(){
+			 modal.style.display = "block";
+			 // $('.share-id').value($(this).data('id'));
+			 var cur_article = $(this).parents("article");
+			 var url = cur_article.find(".post_text .post_text_inner h4 a").prop("href");
+			 console.log(url);
+			 url = "dev.painkilleratelier.com/painkiller/";
+			 $("#shareBtn").off("click").on("click",function(){
+			 	FB.ui({
+				    method: 'share',
+				    mobile_iframe: true,
+				    href: url,
+				}, function(response){});
+			 });
+		});
+
+		
+	});
+	
+})( jQuery );
+
+</script>
