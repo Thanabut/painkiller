@@ -174,6 +174,7 @@ if($category_filter == "yes"){
 		    <input type="hidden" class="share-id" id="share" value=""/>
 		    <div class="modal-body">
 		    <div id="shareBtn" class="btn btn-success clearfix">Fb Share</div>
+		    <a id="twitterBtn" target="_blank" href="#" class="btn btn-success clearfix">Twitter Share</a>
 		     
 		    </div>
 		  </div>
@@ -230,8 +231,8 @@ if($category_filter == "yes"){
 			 // $('.share-id').value($(this).data('id'));
 			 var cur_article = $(this).parents("article");
 			 var url = cur_article.find(".post_text .post_text_inner h4 a").prop("href");
-			 console.log(url);
-			 url = "dev.painkilleratelier.com/painkiller/";
+			 // console.log(url);
+			 url = "http://dev.painkilleratelier.com/painkiller/";
 			 $("#shareBtn").off("click").on("click",function(){
 			 	FB.ui({
 				    method: 'share',
@@ -239,6 +240,9 @@ if($category_filter == "yes"){
 				    href: url,
 				}, function(response){});
 			 });
+
+			 var twitterUrl = "https://twitter.com/intent/tweet?url="+encodeURIComponent(url);
+			 $("#twitterBtn").prop("href",twitterUrl);
 		});
 
 		
