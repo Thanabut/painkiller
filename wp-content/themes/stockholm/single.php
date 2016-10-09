@@ -37,7 +37,6 @@ if(get_post_meta($id, "qode_content-top-padding", true) != ""){
 
 <?php
 $portfolio_categories = get_the_category(get_the_ID());
-
 foreach ($portfolio_categories as $portfolio_category) {
 	if($portfolio_category->name === 'Painkiller' || $portfolio_category->name === 'Mister Painkiller'){
 		?>

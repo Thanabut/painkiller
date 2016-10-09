@@ -15,7 +15,7 @@
   width: 19%;
   display: inline-block;
 }
-@media (max-width: 576px) {
+@media (max-width: 600px) {
   .paint .paint-page .paint-menu-wrapper {
     display: initial;
   }
@@ -27,12 +27,12 @@
   text-align: left;
   color: black;
 }
-@media (max-width: 768px) {
+@media (max-width: 1046px) {
   .paint .paint-page .paint-menu-wrapper .paint-menu {
     left: 3%;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 600px) {
   .paint .paint-page .paint-menu-wrapper .paint-menu {
     position: inherit;
     padding-bottom: 20px;
@@ -44,7 +44,7 @@
 .paint .paint-page .paint-menu-wrapper .paint-menu ul {
   list-style: none;
 }
-@media (max-width: 576px) {
+@media (max-width: 600px) {
   .paint .paint-page .paint-menu-wrapper .paint-menu ul {
     display: -webkit-inline-box;
   }
