@@ -29,12 +29,13 @@
 }
 @media (max-width: 768px) {
   .paint .paint-page .paint-menu-wrapper .paint-menu {
-    left: 5%;
+    left: 3%;
   }
 }
 @media (max-width: 576px) {
   .paint .paint-page .paint-menu-wrapper .paint-menu {
     position: inherit;
+    padding-bottom: 20px;
   }
 }
 .paint .paint-page .paint-menu-wrapper .paint-menu p:hover {
@@ -42,6 +43,11 @@
 }
 .paint .paint-page .paint-menu-wrapper .paint-menu ul {
   list-style: none;
+}
+@media (max-width: 576px) {
+  .paint .paint-page .paint-menu-wrapper .paint-menu ul {
+    display: -webkit-inline-box;
+  }
 }
 .paint .paint-page .paint-content {
   width: 80%;

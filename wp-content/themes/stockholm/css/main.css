@@ -44,6 +44,24 @@
     padding-right: 0%;
   }
 }
+@media only screen and (max-width: 576px) {
+  .submenu-desktop {
+    display: none;
+  }
+}
+.submenu-mobile p {
+  padding-right: 10px;
+}
+@media only screen and (min-width: 576px) {
+  .submenu-mobile {
+    display: none;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .archive-padding {
+    padding-top: 0px !important;
+  }
+}
 .no-padding-top {
   padding-top: 0px !important;
 }
@@ -94,6 +112,24 @@
 }
 nav.mobile_menu {
   background-color: transparent;
+}
+.form-row .three {
+  display: inline-block;
+  width: 77%;
+  float: left;
+  border: 1px solid #161616;
+}
+.form-row .three input {
+  width: 98%;
+  margin-bottom: 0px;
+}
+.form-row .one {
+  display: inline-block;
+  width: 20%;
+  float: left;
+}
+.form-row .one input {
+  width: 98%;
 }
 .form-row .half {
   display: inline-block;
