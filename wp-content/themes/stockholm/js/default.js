@@ -2032,7 +2032,7 @@ function resizeMasonry(container){
 		}else if(portfolio_width <= 964 && portfolio_width > 728){
 			$cols = 4;
 		}else if(portfolio_width <= 728 && portfolio_width > 540){
-			$cols = 2;
+			$cols = 3;
 		}else if(portfolio_width <= 540){
 			$cols = 1;
 		}
