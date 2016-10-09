@@ -28,13 +28,6 @@ var video_height_original = 720;
 var vid_ratio = 1280/720;
 var skrollr_slider;
 
-function getWidth(){
-	if($j('.col-masonry').length){
-		var width_blog = $j('.col-masonry').width();
-	}
-	return $j(window).width();
-}
-
 if($j('.portfolio_single_sticky').length){
 	var stickyInfoTopOffset;
 	var stickyInfoHeight;
@@ -1993,6 +1986,10 @@ function resizeMasonry(container){
 			portfolio_width = $window.innerWidth();
 		}
 
+		if($j('.paint-content').length){
+			portfolio_width = $j('.paint-content').width();
+		}
+
 		if(container.hasClass('masonry_extended')) {
 			portfolio_width = portfolio_width - 60;
 		}
@@ -2003,6 +2000,10 @@ function resizeMasonry(container){
 			portfolio_width =  container.closest('.column_inner').innerWidth();
 		} else {
 			portfolio_width = closest_container.innerWidth();
+		}
+
+		if($j('.paint-content').length){
+			portfolio_width = $j('.paint-content').width();
 		}
 
 		if(container.hasClass('masonry_extended')) {
@@ -2023,7 +2024,20 @@ function resizeMasonry(container){
 	}else if(portfolio_width <= 480){
 		$cols = 1;
 	}
-	if(container.hasClass('masonry_extended')) {
+	if($j('.paint-content').length){
+		if(portfolio_width > 1600){
+			$cols = 4;
+		}else if(portfolio_width <= 1600 && portfolio_width > 964){
+			$cols = 4;
+		}else if(portfolio_width <= 964 && portfolio_width > 728){
+			$cols = 4;
+		}else if(portfolio_width <= 728 && portfolio_width > 540){
+			$cols = 3;
+		}else if(portfolio_width <= 540){
+			$cols = 1;
+		}
+	}
+	else if(container.hasClass('masonry_extended')) {
 		if(portfolio_width > 1600){
 			$cols = 4;
 		}else if(portfolio_width <= 1600 && portfolio_width > 964){
@@ -3214,8 +3228,8 @@ function initBlogMasonryFullWidth(){
 	"use strict";
 
 	if($j('.masonry_full_width').length){
-		if($j('.col-masonry').length){
-			var width_blog = $j('.col-masonry').width();
+		if($j('.paint-content').length){
+			var width_blog = $j('.paint-content').width();
 			// console.log("blog" +width_blog);
 		}else{
 			var width_blog = $j('.full_width_inner').width();
@@ -3228,8 +3242,8 @@ function initBlogMasonryFullWidth(){
 		if($j('.masonry_full_width').hasClass('pinterest_full_width')) {
 			var $cols = 4;
 
-			if($j('.col-masonry').length){
-				var width_col = $j('.col-masonry').width();
+			if($j('.paint-content').length){
+				var width_col = $j('.paint-content').width();
 				// console.log(width_col);
 				if(width_col < 480) {
 					$cols = 1;
@@ -3242,9 +3256,7 @@ function initBlogMasonryFullWidth(){
 			}else{
 				if($container.width() < 480) {
 					$cols = 1;
-				} else if($container.width() <= 950) {
-					$cols = 2;
-				} else if($container.width() <= 1320) {
+				} else if($container.width() <= 950) {$cols=2;} else if($container.width() <= 1320) {
 					$cols = 3;
 				}
 			}
