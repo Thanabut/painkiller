@@ -18,7 +18,7 @@ elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
 else { $paged = 1; }
 $page_object = get_post( $id );
 $q_content = $page_object->post_content;
-$page_archieve = '';
+$page_archive = '';
 $collection_page = '';
 
 $q_content = apply_filters( 'the_content', $q_content );
@@ -65,10 +65,10 @@ if($category_filter == "yes"){
 	<?php
 		$page = split('/',$_SERVER["REQUEST_URI"])[2];
 		$css_class = '';
-		if($page === 'archieve-mister-painkiller' || $page === 'archieve-painkiller'){
-			$css_class = 'no-padding-top';
+		if($page === 'archive-mister-painkiller' || $page === 'archive-painkiller'){
+			$css_class = 'archive-padding';
 		}
-		if($page !== 'archieve-mister-painkiller' && $page !== 'archieve-painkiller'){
+		if($page !== 'archive-mister-painkiller' && $page !== 'archive-painkiller'){
 			get_template_part('templates/painkiller/homepage-header');
 		}
 
@@ -89,17 +89,17 @@ if($category_filter == "yes"){
 		}
 	?>
 	
-	<div class="full_width"<?php if($background_color != "") { echo " style='background-color:". $background_color ."'";} ?>>
-		<div class="full_width_inner<?php echo esc_attr($container_inner_class); ?>" <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
+	<div class="full_width <?php echo $css_class; ?>"<?php if($background_color != "") { echo " style='background-color:". $background_color ."'";} ?>>
+		<div class="full_width_inner <?php echo esc_attr($container_inner_class); ?> " <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
 			<?php
 				print $q_content;
-				if($page === 'archieve-mister-painkiller' || $page === 'archieve-painkiller'){
+				if($page === 'archive-mister-painkiller' || $page === 'archive-painkiller'){
 
-					if($page === 'archieve-painkiller'){
-						$page_archieve = '/archieve-painkiller';
+					if($page === 'archive-painkiller'){
+						$page_archive = '/archive-painkiller';
 						$collection_page = '/latest-painkiller';
 					}else{
-						$page_archieve = '/archieve-mister-painkiller';
+						$page_archive = '/archive-mister-painkiller';
 						$collection_page = '/latest-mister-painkiller';
 					}
 					?>
@@ -116,19 +116,36 @@ if($category_filter == "yes"){
 						<div class="paint-page"> 
 							<div class="paint-menu-wrapper"> 
 								<div class="paint-menu">
-								<ul>
-									<li>
-										<a href="<?php echo get_site_url().$collection_page ?>"> <p> S/S16 LAND BEFORE TIME </p> </a>
-									</li>
-									<li>
-										<a href="<?php echo get_site_url().$page_archieve ?>"> <p> Archive </p> </a>
-									</li>
-									<?php if($page === 'archieve-painkiller'){?>
-									<li>
-										<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
-									</li>
-									<?php } ?>
-								</ul>
+									<div class='submenu-desktop'> 
+										<ul>
+											<li>
+												<a href="<?php echo get_site_url().$collection_page ?>"> <p> S/S16 LAND BEFORE TIME </p> </a> 
+											</li>
+											<li>
+												<a href="<?php echo get_site_url().$page_archive ?>"> <p> Archive </p> </a>
+											</li>
+											<?php if($page === 'archive-painkiller'){?>
+											<li>
+												<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
+											</li>
+											<?php } ?>
+										</ul>
+									</div>
+									<div class='submenu-mobile'> 
+										<ul>
+											<li>
+												<a href="<?php echo get_site_url().$collection_page ?>"> <p> S/S16 </p> </a> 
+											</li>
+											<li>
+												<a href="<?php echo get_site_url().$page_archive ?>"> <p> | &nbsp; Archive  </p> </a>
+											</li>
+											<?php if($page === 'archive-painkiller'){?>
+											<li>
+												<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> | &nbsp; Print </p> </a>
+											</li>
+											<?php } ?>
+										</ul>
+									</div>
 								</div>
 						    </div>
 						    <div class='paint-content col-masonry'>

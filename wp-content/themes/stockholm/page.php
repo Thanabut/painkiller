@@ -22,6 +22,18 @@ if(get_post_meta($id, "qode_content-top-padding", true) != ""){
 	}
 }
 
+$pagename = get_query_var('pagename');  
+	if ( !$pagename && $id > 0 ) {  
+	    // If a static page is set as the front page, $pagename will not be set. Retrieve it from the queried object  
+	    $post = $wp_query->get_queried_object();  
+	    $pagename = $post->post_name;  
+	}
+
+
+	if($pagename === 'view-by-print'){
+		$css_class = 'archive-padding';
+	}
+
 if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
 elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
 else { $paged = 1; }
@@ -48,7 +60,7 @@ else { $paged = 1; }
 		?>
 		
 		<div class="container"<?php if($background_color != "") { echo " style='background-color:". $background_color ."'";} ?>>
-			<div class="container_inner default_template_holder clearfix" <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
+			<div class="container_inner default_template_holder clearfix <?php echo $css_class; ?>" <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
 				<?php if(($sidebar == "default")||($sidebar == "")) : ?>
 							<?php
 
@@ -61,7 +73,6 @@ else { $paged = 1; }
 
 
 				if($pagename === 'view-by-print'){
-					$recent_posts = wp_get_recent_posts();
 					
 					
 					?>
@@ -78,17 +89,32 @@ else { $paged = 1; }
 						<div class="paint-page"> 
 							<div class="paint-menu-wrapper"> 
 								<div class="paint-menu">
-								<ul>
-									<li>
-										<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> S/S16 LAND BEFORE TIME </p> </a>
-									</li>
-									<li>
-										<a href="<?php echo get_site_url().'/archieve-painkiller' ?>"> <p> Archive </p> </a>
-									</li>
-									<li>
-										<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
-									</li>
-								</ul>
+									<div class='submenu-desktop'> 
+										<ul>
+											<li>
+												<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> S/S16 LAND BEFORE TIME </p> </a>
+											</li>
+											<li>
+												<a href="<?php echo get_site_url().'/archive-painkiller' ?>"> <p> Archive </p> </a>
+											</li>
+											<li>
+												<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
+											</li>
+										</ul>
+									</div>
+									<div class='submenu-mobile'> 
+										<ul>
+											<li>
+												<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> S/S16 </p> </a> 
+											</li>
+											<li>
+												<a href="<?php echo get_site_url().'/archive-painkiller' ?>"> <p> | &nbsp; Archive  </p> </a>
+											</li>
+											<li>
+												<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> | &nbsp; Print </p> </a>
+											</li>
+										</ul>
+									</div>
 								</div>
 						    </div>
 						    <div class='paint-content'>
