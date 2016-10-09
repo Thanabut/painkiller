@@ -44,7 +44,7 @@
     padding-right: 0%;
   }
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 600px) {
   .submenu-desktop {
     display: none;
   }
@@ -52,12 +52,12 @@
 .submenu-mobile p {
   padding-right: 10px;
 }
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 601px) {
   .submenu-mobile {
     display: none;
   }
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 601px) {
   .archive-padding {
     padding-top: 0px !important;
   }

@@ -2034,7 +2034,7 @@ function resizeMasonry(container){
 		}else if(portfolio_width <= 728 && portfolio_width > 540){
 			$cols = 3;
 		}else if(portfolio_width <= 540){
-			$cols = 1;
+			$cols = 2;
 		}
 	}
 	else if(container.hasClass('masonry_extended')) {
