@@ -744,7 +744,7 @@ header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a{
 			.menu-animation-line-through nav.main_menu > ul > li:hover > a .menu-text:before,
 			.menu-animation-underline nav.main_menu > ul > li > a .menu-text:before,
 			.menu-animation-underline-bottom nav.main_menu > ul > li > a .menu-text:before{
-				background-color: #ffffff			}
+				background-color: #000000			}
 
 			.menu-animation-line-through nav.main_menu > ul > li:hover > a .menu-text:after{
 				background: transparent;
