@@ -7,6 +7,12 @@
     padding-left: 50px;
   }
 }
+@media (max-width: 601px) {
+  .paint {
+    padding-top: 0px;
+    padding-left: 0px;
+  }
+}
 .paint .paint-page {
   width: 100%;
   position: relative;
@@ -15,7 +21,7 @@
   width: 19%;
   display: inline-block;
 }
-@media (max-width: 600px) {
+@media (max-width: 601px) {
   .paint .paint-page .paint-menu-wrapper {
     display: initial;
   }
@@ -32,10 +38,10 @@
     left: 3%;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 601px) {
   .paint .paint-page .paint-menu-wrapper .paint-menu {
     position: inherit;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
   }
 }
 .paint .paint-page .paint-menu-wrapper .paint-menu p:hover {
@@ -44,8 +50,36 @@
 .paint .paint-page .paint-menu-wrapper .paint-menu ul {
   list-style: none;
 }
-@media (max-width: 600px) {
+@media (max-width: 601px) {
   .paint .paint-page .paint-menu-wrapper .paint-menu ul {
+    display: -webkit-inline-box;
+  }
+}
+.paint .paint-page .paint-menu-wrapper .view-by-print-menu {
+  font-size: 16px;
+  position: fixed;
+  top: 50%;
+  text-align: left;
+  color: black;
+}
+@media (max-width: 1046px) {
+  .paint .paint-page .paint-menu-wrapper .view-by-print-menu {
+    left: 3%;
+  }
+}
+@media (max-width: 601px) {
+  .paint .paint-page .paint-menu-wrapper .view-by-print-menu {
+    position: inherit;
+  }
+}
+.paint .paint-page .paint-menu-wrapper .view-by-print-menu p:hover {
+  color: black;
+}
+.paint .paint-page .paint-menu-wrapper .view-by-print-menu ul {
+  list-style: none;
+}
+@media (max-width: 601px) {
+  .paint .paint-page .paint-menu-wrapper .view-by-print-menu ul {
     display: -webkit-inline-box;
   }
 }
@@ -53,8 +87,24 @@
   width: 80%;
   display: inline-block;
 }
+@media (max-width: 601px) {
+  .paint .paint-page .paint-content {
+    width: 100%;
+  }
+}
 @media (max-width: 768px) {
   .paint-content .filter_holder {
     display: none;
+  }
+}
+@media (max-width: 601px) {
+  .paint-content.col-masonry .pinterest_full_width {
+    width: 100% !important;
+  }
+  .content_inner > .full_width.archive-padding > .full_width_inner {
+    padding-top: 20px !important;
+  }
+  .content_inner > .container > .container_inner.default_template_holder.clearfix.archive-padding {
+    padding-top: 20px !important;
   }
 }
