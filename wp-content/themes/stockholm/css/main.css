@@ -57,15 +57,18 @@
     padding-right: 0%;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 601px) {
   .submenu-desktop {
     display: none;
   }
 }
+.submenu-mobile {
+  text-align: center;
+}
 .submenu-mobile p {
   padding-right: 10px;
 }
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 602px) {
   .submenu-mobile {
     display: none;
   }

@@ -88,7 +88,7 @@ else { $paged = 1; }
 					<div class="paint">
 						<div class="paint-page"> 
 							<div class="paint-menu-wrapper"> 
-								<div class="paint-menu">
+								<div class="view-by-print-menu">
 									<div class='submenu-desktop'> 
 										<ul>
 											<li>
