@@ -161,11 +161,7 @@ if($category_filter == "yes"){
 			} ?>
 		</div>
 	</div>
-	
-<?php wp_reset_query(); ?>
-<?php get_footer(); ?>
-<!-- The Modal -->
-		<div id="myModal" class="modal">
+	<div id="myModal" class="modal">
 
 		  <!-- Modal content -->
 		  <div class="modal-content">
@@ -176,13 +172,17 @@ if($category_filter == "yes"){
 		    <?php $share_id = ''; ?>
 		    <input type="hidden" class="share-id" id="share" value=""/>
 		    <div class="modal-body">
-		    <div id="shareBtn" class="btn btn-success clearfix">Fb Share</div>
-		    <a id="twitterBtn" target="_blank" href="#" class="btn btn-success clearfix">Twitter Share</a>
+		    <a id="shareBtn" class="btn btn-success clearfix">Fb Share</a>
+		    <a id="twitterBtn" href="#" class="btn btn-success clearfix">Twitter Share</a>
 		     
 		    </div>
 		  </div>
 
 		</div>
+<?php wp_reset_query(); ?>
+<?php get_footer(); ?>
+<!-- The Modal -->
+		
 <script>
 // Get the modal
 
@@ -191,15 +191,15 @@ if($category_filter == "yes"){
 (function($) {
 	
 	$(document).ready(function(){
-		$.ajaxSetup({ cache: true });
-		  $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
-		    FB.init({
-		      appId: '342131019456401',
-		      version: 'v2.7' // or v2.1, v2.2, v2.3, ...
-		    });     
-		    // $('#loginbutton,#feedbutton').removeAttr('disabled');
-		    // FB.getLoginStatus(updateStatusCallback);
-		  });
+		// $.ajaxSetup({ cache: true });
+		//   $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+		//     FB.init({
+		//       appId: '342131019456401',
+		//       version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+		//     });     
+		//     // $('#loginbutton,#feedbutton').removeAttr('disabled');
+		//     // FB.getLoginStatus(updateStatusCallback);
+		//   });
 
 		var modal = document.getElementById('myModal');
 		// Get the button that opens the modal
@@ -231,19 +231,33 @@ if($category_filter == "yes"){
 			 modal.style.display = "block";
 			 // $('.share-id').value($(this).data('id'));
 			 var cur_article = $(this).parents("article");
-			 var url = cur_article.find(".post_text .post_text_inner h4 a").prop("href");
+			 console.log(cur_article+"DD");
+			 var post_img = cur_article.find(".post_image > a > img").prop("src");
+			 var post_title = cur_article.find(".post_text > .post_text_inner > h4 > a").text();
+			 var url = cur_article.find(".post_text > .post_text_inner > h4 > a").prop("href");
 			 // console.log(url);
-			 url = "http://dev.painkilleratelier.com/painkiller/";
-			 $("#shareBtn").off("click").on("click",function(){
-			 	FB.ui({
-				    method: 'share',
-				    mobile_iframe: true,
-				    href: url,
-				}, function(response){});
+			 // url = "http://dev.painkilleratelier.com/painkiller/";
+			 
+			 // $("#shareBtn").off("click").on("click",function(){
+			 // 	FB.ui({
+				//     method: 'share',
+				//     mobile_iframe: true,
+				//     href: url,
+				// }, function(response){});
+			 // });
+			 $("#shareBtn").off("click").on("click",function(e){
+			 	e.preventDefault();
+			 	window.open('http://www.facebook.com/sharer.php?s=100&p[title]='+encodeURIComponent(post_title)+'&p[url]='+encodeURIComponent(url)+'&p[images][0]='+encodeURIComponent(post_img)+'&p[summary]=', 'sharer', 'toolbar=0,status=0,width=620,height=280');
+			 	
 			 });
 
-			 var twitterUrl = "https://twitter.com/intent/tweet?url="+encodeURIComponent(url);
-			 $("#twitterBtn").prop("href",twitterUrl);
+			 var twitterUrl = "https://twitter.com/intent/tweet?url="+encodeURIComponent(url)+"&text="+encodeURIComponent(post_title);
+
+			 $("#twitterBtn").off("click").on("click",function(e){
+			 	e.preventDefault();
+			 	window.open(twitterUrl, 'sharer', 'toolbar=0,status=0,width=620,height=280');
+			 	
+			 });
 		});
 
 		

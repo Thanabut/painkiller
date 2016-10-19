@@ -36,13 +36,12 @@
 			<p>Minimal romantic finery for artsy gentleman.</p>
 		</div>
 	</div>
-	
-	
 </div>
+
 <script type="text/javascript">
 	(function($) {
 		$(document).ready(function(){
-			console.log($("body").prop("clientWidth"));
+			// console.log($("body").prop("clientWidth"));
 			// if($("body").prop("clientWidth") > 767){
 				var divHeader = $(".header-wrapper");
 				divHeader.find('.header-logo > img').animate({ "opacity": "1" }, 500,function(){
