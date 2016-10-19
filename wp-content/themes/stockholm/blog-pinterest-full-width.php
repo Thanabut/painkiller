@@ -90,7 +90,7 @@ if($category_filter == "yes"){
 	?>
 	
 	<div class="full_width <?php echo $css_class; ?>"<?php if($background_color != "") { echo " style='background-color:". $background_color ."'";} ?>>
-		<div class="full_width_inner ?> <?php echo esc_attr($container_inner_class); ?> " <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
+		<div class="full_width_inner <?php echo esc_attr($container_inner_class); ?> " <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
 			<?php
 				print $q_content;
 				if($page === 'archive-mister-painkiller' || $page === 'archive-painkiller'){
@@ -161,7 +161,10 @@ if($category_filter == "yes"){
 			} ?>
 		</div>
 	</div>
-	<!-- The Modal -->
+	
+<?php wp_reset_query(); ?>
+<?php get_footer(); ?>
+<!-- The Modal -->
 		<div id="myModal" class="modal">
 
 		  <!-- Modal content -->
@@ -180,8 +183,6 @@ if($category_filter == "yes"){
 		  </div>
 
 		</div>
-<?php wp_reset_query(); ?>
-<?php get_footer(); ?>
 <script>
 // Get the modal
 
