@@ -4,7 +4,6 @@
 $id = get_the_ID();
 
 
-
 $chosen_sidebar = get_post_meta(get_the_ID(), "qode_show-sidebar", true);
 $default_array = array('default', '');
 
@@ -24,6 +23,10 @@ if(get_post_meta($id, "qode_page_background_color", true) != ""){
 	$background_color = "";
 }
 
+
+
+
+
 $content_style = "";
 if(get_post_meta($id, "qode_content-top-padding", true) != ""){
 	if(get_post_meta($id, "qode_content-top-padding-mobile", true) == "yes"){
@@ -39,7 +42,22 @@ if(get_post_meta($id, "qode_content-top-padding", true) != ""){
 $portfolio_categories = get_the_category(get_the_ID());
 foreach ($portfolio_categories as $portfolio_category) {
 	if($portfolio_category->name === 'Painkiller' || $portfolio_category->name === 'Mister Painkiller'){
-		?>
+		$image_header =  get_the_post_thumbnail_url($id);
+		if(!empty($image_header)){ ?>
+			<style type="text/css">
+					.header-painkiller-content{
+						position: relative;
+					    background-color: rgba(0, 0, 0, 0);
+					    background-repeat: no-repeat;
+					    background-image: url(<?php echo $image_header ?>);
+					    background-size: cover;
+					    background-position: center center;
+					}
+				</style>
+			<?php
+		}
+		 ?>
+
 		<style type="text/css">
 			header{
 				position: fixed;
