@@ -15,7 +15,7 @@
   font-size: large;
 }
 .page-header .header-wrapper div.img-1 {
-  top: 0;
+  top: -30px;
   left: 0;
   max-height: 250px;
   max-width: 29%;
@@ -24,11 +24,11 @@
   -ms-transform: rotate(-90deg);
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
-  right: -135px;
+  right: -145px;
   top: 106px;
 }
 .page-header .header-wrapper div.img-2 {
-  bottom: 0;
+  bottom: -30px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -36,15 +36,16 @@
 }
 .page-header .header-wrapper div.img-2 .side-text {
   bottom: 10px;
-  right: -164px;
+  right: -174px;
   z-index: 10;
 }
 .page-header .header-wrapper div.img-3 {
+  top: -30px;
   right: 0;
   max-width: 29%;
 }
 .page-header .header-wrapper div.img-3 .side-text {
-  bottom: -21px;
+  bottom: -31px;
   right: 0;
 }
 .page-header .header-wrapper div.header-logo {
