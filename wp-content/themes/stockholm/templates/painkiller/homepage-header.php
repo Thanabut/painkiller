@@ -7,11 +7,13 @@
 <div class="page-header">
 	<div class="header-wrapper">
 		<div class="img-1">
-			<div class="side-text" style="opacity: 0;">
-				Painkiller recent collection
-			</div>
-			<img style="opacity: 0;" src="<?php echo get_template_directory_uri();?>/img/21.jpg">
-			<p>Painkiller</p>
+			<a href="<?php echo get_site_url(); ?>/latest-painkiller">
+				<div class="side-text" style="opacity: 0;">
+					Painkiller recent collection
+				</div>
+				<img style="opacity: 0;" src="<?php echo get_template_directory_uri();?>/img/21.jpg">
+				<p>Painkiller</p>
+			</a>
 		</div>
 		<div class="img-2">
 			<div class="side-text" style="opacity: 0;">
@@ -21,11 +23,13 @@
 			<p>Archive</p>
 		</div>
 		<div class="img-3">
-			<div class="side-text" style="opacity: 0;">
-				Mister painkiller
-			</div>
-			<img style="opacity: 0;" src="<?php echo get_template_directory_uri();?>/img/MRPK01-09.jpg" alt="">
-			<p>Mister Painkiller</p>
+			<a href="<?php echo get_site_url(); ?>/latest-mister-painkiller/">
+				<div class="side-text" style="opacity: 0;">
+					Mister painkiller
+				</div>
+				<img style="opacity: 0;" src="<?php echo get_template_directory_uri();?>/img/MRPK01-09.jpg" alt="">
+				<p>Mister Painkiller</p>
+			</a>
 		</div>
 		<div class="header-logo">
 			<img style="opacity: 0;" src="<?php echo get_template_directory_uri();?>/img/logo-pk-main.png" alt="">
@@ -52,9 +56,9 @@
 					img_sDown.find('img').animate({ "opacity": "1" }, 1300);
 					img_sUp.find('img').animate({ "opacity": "1" }, 1300);
 					img_sUp.animate({ "bottom": "+=30px" }, 1000, function(){
-						divHeader.find(".img-1 > .side-text").animate({"opacity": "1" , "right": "+=10px"}, 500)
-						divHeader.find(".img-2 > .side-text").animate({"opacity": "1" , "right": "+=10px"}, 500)
-						divHeader.find(".img-3 > .side-text ").animate({"opacity": "1" , "bottom": "+=10px"}, 500,function(){
+						divHeader.find(".img-1 .side-text").animate({"opacity": "1" , "right": "+=10px"}, 500)
+						divHeader.find(".img-2 .side-text").animate({"opacity": "1" , "right": "+=10px"}, 500)
+						divHeader.find(".img-3 .side-text ").animate({"opacity": "1" , "bottom": "+=10px"}, 500,function(){
 								var title = divHeader.find(".header-main-title");
 								var height = title.css({
 							        display: "block"
@@ -81,6 +85,43 @@
 				//end animate
 			// }
 			//end if window
+
+			var lastScrollTop = 0;
+			$(window).scroll(function(event){
+				var img_position = $(".header-wrapper .img-1").css("position");
+				if(img_position == "absolute"){
+					var img13 = $(".header-wrapper").find(".img-1, .img-3");
+					var img2 = $(".header-wrapper").find(".img-2");
+				   	var st = $(this).scrollTop();
+				   	console.log(st);
+				   	if (st > lastScrollTop){
+				       	// downscroll code
+				       	img13.animate({"top": "-=1px"},0);
+						img2.animate({"bottom": "+=1px"},0);
+
+					} else {
+					    // upscroll code
+					    img13.animate({"top": "+=1px"},0);
+						img2.animate({"bottom": "-=1px"},0);
+					    // $(".header-wrapper > .img-2 > .side-text").animate({"top": "+=0.5px"},0);
+
+					}
+					if(st == 0){
+						$(".header-wrapper > .img-2").css({bottom:"10px"});
+						$(".header-wrapper > .img-1, .header-wrapper > .img-3").css({top:"0px"});
+					}
+					lastScrollTop = st;
+
+				}
+			});
+
+			$(window).resize(function(event) {
+				var img_position = $(".header-wrapper .img-1").css("position");
+				if(img_position == "absolute"){
+					$(".header-wrapper > .img-2").css({bottom:"10px"});
+					$(".header-wrapper > .img-1, .header-wrapper > .img-3").css({top:"0px"});
+				}
+			});
 			
 		});
 		
