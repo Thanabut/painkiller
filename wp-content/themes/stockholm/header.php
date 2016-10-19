@@ -46,6 +46,7 @@ global $wp_query;
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/dotbackground.css">
 	<?php endif ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/main.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/paint-page.css">
 </head>
 
 <body <?php body_class(); ?>>
