@@ -66,13 +66,24 @@ foreach ($portfolio_categories as $portfolio_category) {
 		<div class="header-painkiller">
 			<div class="header-painkiller-content"> 
 				<div class="menu-painkiller"> 
-					<?php if($portfolio_category->name === 'Painkiller'){ ?>
-					<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> S/S16 LAND BEFORE TIME </p> </a>
+					<?php if($portfolio_category->name === 'Painkiller'){
+						$post_title = 'S/S16 LAND BEFORE TIME';
+						$cat_id = '11';
+						$args = array( 'category' => $cat_id );
+						$recent_posts = wp_get_recent_posts($args);
+						$post_title = $recent_posts[0]['post_title'];
+					 ?>
+					<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> <?php echo $post_title; ?></p> </a>
 					
 					<a href="<?php echo get_site_url().'/archive-painkiller' ?>"> <p> Archive </p> </a>
 					<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
-					<?php }else{ ?>
-						<a href="<?php echo get_site_url().'/latest-mister-painkiller' ?>"> <p> S/S16 LAND BEFORE TIME </p> </a>
+					<?php }else{ 
+						$cat_id = '4';
+						$args = array( 'category' => $cat_id );
+						$recent_posts = wp_get_recent_posts($args);
+						$post_title = $recent_posts[0]['post_title'];
+						?>
+						<a href="<?php echo get_site_url().'/latest-mister-painkiller' ?>"> <p> <?php echo $post_title; ?></p> </a>
 						<a href="<?php echo get_site_url().'/archive-mister-painkiller' ?>"> <p> Archive </p> </a>
 					<?php } ?>
 			    </div>
