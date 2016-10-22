@@ -43,6 +43,11 @@ switch( $diffDays ) {
     default:
         echo "";
 }
+$portfolio_m_images = get_post_meta(get_the_ID(), "qode_portfolio-image-gallery", true);
+
+$portfolio_image_gallery_array=explode(',',$portfolio_m_images);
+$image_src = wp_get_attachment_image_src( $portfolio_image_gallery_array[0], 'blog_image_in_grid' );
+
 
 
 $wp_read_more = "off";
@@ -323,7 +328,15 @@ switch ($_post_format) {
 	default:
 		?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<?php if ( has_post_thumbnail() ) { ?>
+			<?php if ( !empty($image_src[0]) ) { ?>
+				<div class="post_image">
+					<a href="<?php the_permalink(); ?>" target="_self" title="<?php the_title_attribute(); ?>">
+						<img width="1100" height="734" sizes="(max-width: 1100px) 100vw, 1100px" src="<?php echo esc_url($image_src[0]); ?>"  />	
+						<span class="post_overlay">
+						</span>
+					</a>
+				</div>
+			<?php } else if ( has_post_thumbnail() ) { ?>
 				<div class="post_image">
 					<a href="<?php the_permalink(); ?>" target="_self" title="<?php the_title_attribute(); ?>">
 						<?php the_post_thumbnail('full'); ?>
