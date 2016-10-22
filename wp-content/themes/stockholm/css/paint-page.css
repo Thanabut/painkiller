@@ -97,6 +97,14 @@
     display: none;
   }
 }
+@media (max-width: 600px) {
+  .four_columns > .column1 > .column_inner,
+  .four_columns > .column2 > .column_inner,
+  .four_columns > .column3 > .column_inner,
+  .four_columns > .column4 > .column_inner {
+    padding: 0px !important;
+  }
+}
 @media (max-width: 601px) {
   .paint-content.col-masonry .pinterest_full_width {
     width: 100% !important;
@@ -106,12 +114,6 @@
   }
   .content_inner > .container > .container_inner.default_template_holder.clearfix.archive-padding {
     padding-top: 0px !important;
-  }
-  .four_columns > .column1 > .column_inner,
-  .four_columns > .column2 > .column_inner,
-  .four_columns > .column3 > .column_inner,
-  .four_columns > .column4 > .column_inner {
-    padding: 0px !important;
   }
   .filter_holder ul li {
     display: -webkit-inline-box;
