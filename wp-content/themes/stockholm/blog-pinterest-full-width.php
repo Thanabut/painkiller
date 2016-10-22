@@ -98,10 +98,20 @@ if($category_filter == "yes"){
 					if($page === 'archive-painkiller'){
 						$page_archive = '/archive-painkiller';
 						$collection_page = '/latest-painkiller';
+						$cat_id = '11';
+						$args = array( 'category' => $cat_id );
+						$recent_posts = wp_get_recent_posts($args);
+						$post_title = $recent_posts[0]['post_title'];
 					}else{
+						$cat_id = '4';
+						$args = array( 'category' => $cat_id );
+						$recent_posts = wp_get_recent_posts($args);
+						$post_title = $recent_posts[0]['post_title'];
 						$page_archive = '/archive-mister-painkiller';
 						$collection_page = '/latest-mister-painkiller';
 					}
+
+
 					?>
 					<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/paint-page.css">
 
@@ -119,7 +129,7 @@ if($category_filter == "yes"){
 									<div class='submenu-desktop'> 
 										<ul>
 											<li>
-												<a href="<?php echo get_site_url().$collection_page ?>"> <p> S/S16 LAND BEFORE TIME </p> </a> 
+												<a href="<?php echo get_site_url().$collection_page ?>"> <p> <?php echo $post_title; ?> </p> </a> 
 											</li>
 											<li>
 												<a href="<?php echo get_site_url().$page_archive ?>"> <p> Archive </p> </a>
@@ -134,7 +144,7 @@ if($category_filter == "yes"){
 									<div class='submenu-mobile'> 
 										<ul>
 											<li>
-												<a href="<?php echo get_site_url().$collection_page ?>"> <p> S/S16 </p> </a> 
+												<a href="<?php echo get_site_url().$collection_page ?>"> <p> <?php echo $post_title; ?> </p> </a> 
 											</li>
 											<li>
 												<a href="<?php echo get_site_url().$page_archive ?>"> <p> | &nbsp; Archive  </p> </a>

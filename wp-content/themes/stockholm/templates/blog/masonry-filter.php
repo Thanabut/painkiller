@@ -31,7 +31,9 @@ if ($page_category == "" && !is_category()) {
                 );
                 $categories = get_categories( $args );
             }
-if ($filter == "yes" && count($categories) > 0) {	?>
+if ($filter == "yes" && count($categories) > 0) {	
+
+	?>
 
 			<div class="filter_outer">
 				<div class="filter_holder <?php echo esc_attr($blog_masnory_filter_class); ?>">
