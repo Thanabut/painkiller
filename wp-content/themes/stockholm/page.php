@@ -73,7 +73,10 @@ else { $paged = 1; }
 
 
 				if($pagename === 'view-by-print'){
-					
+					$cat_id = '11';
+					$args = array( 'category' => $cat_id );
+					$recent_posts = wp_get_recent_posts($args);
+					$post_title = $recent_posts[0]['post_title'];
 					
 					?>
 					<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/paint-page.css">
@@ -92,7 +95,7 @@ else { $paged = 1; }
 									<div class='submenu-desktop'> 
 										<ul>
 											<li>
-												<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> S/S16 LAND BEFORE TIME </p> </a>
+												<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> <?php echo $post_title; ?></p> </a>
 											</li>
 											<li>
 												<a href="<?php echo get_site_url().'/archive-painkiller' ?>"> <p> Archive </p> </a>
@@ -105,7 +108,7 @@ else { $paged = 1; }
 									<div class='submenu-mobile'> 
 										<ul>
 											<li>
-												<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> S/S16 </p> </a> 
+												<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> <?php echo $post_title; ?></p> </a> 
 											</li>
 											<li>
 												<a href="<?php echo get_site_url().'/archive-painkiller' ?>"> <p> | &nbsp; Archive  </p> </a>

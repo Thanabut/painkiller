@@ -113,4 +113,14 @@
   .four_columns > .column4 > .column_inner {
     padding: 0px !important;
   }
+  .filter_holder ul li {
+    display: -webkit-inline-box;
+    float: none;
+  }
+  .filter_holder ul {
+    text-align: center;
+  }
+  .content .content_inner > .full_width > .full_width_inner {
+    padding: 0px !important;
+  }
 }

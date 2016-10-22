@@ -36,7 +36,7 @@ if(get_post_meta($id, "qode_content-top-padding", true) != ""){
 	}
 }
 ?>
-<?php get_header(); ?>
+<?php get_header();  ?>
 
 <?php
 $portfolio_categories = get_the_category(get_the_ID());
@@ -63,10 +63,46 @@ foreach ($portfolio_categories as $portfolio_category) {
 				position: fixed;
 			}
 		</style>
+		<div class="menu-mobile-painkiller"> 
+					<?php  if($portfolio_category->name === 'Painkiller'){
+						$post_title = 'S/S16 LAND BEFORE TIME';
+						$cat_id = '11';
+						$args = array( 'category' => $cat_id );
+						$recent_posts = wp_get_recent_posts($args);
+						$post_title = $recent_posts[0]['post_title'];
+					 ?>
+					 <ul>
+						<li>
+							<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> <?php echo $post_title; ?> &nbsp; </p> </a>
+						</li>
+						<li>
+							<a href="<?php echo get_site_url().'/archive-painkiller' ?>"> <p> | &nbsp; Archive &nbsp; </p></a>
+						</li>
+						<li>
+							<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> | &nbsp; Print </p> </a>
+						</li>
+					</ul>
+					<?php }else{ 
+						$cat_id = '4';
+						$args = array( 'category' => $cat_id );
+						$recent_posts = wp_get_recent_posts($args);
+						$post_title = $recent_posts[0]['post_title'];
+						?>
+						<ul>
+						<li>
+							<a href="<?php echo get_site_url().'/latest-mister-painkiller' ?>"> <p> <?php echo $post_title; ?> &nbsp; </p> </a>
+						</li>
+						<li>
+							<a href="<?php echo get_site_url().'/archive-mister-painkiller' ?>"> <p> | &nbsp;  Archive </p> </a>
+						</li>
+					</ul>
+						
+					<?php } ?>
+			    </div>
 		<div class="header-painkiller">
 			<div class="header-painkiller-content"> 
 				<div class="menu-painkiller"> 
-					<?php if($portfolio_category->name === 'Painkiller'){
+					<?php  if($portfolio_category->name === 'Painkiller'){
 						$post_title = 'S/S16 LAND BEFORE TIME';
 						$cat_id = '11';
 						$args = array( 'category' => $cat_id );
@@ -87,6 +123,7 @@ foreach ($portfolio_categories as $portfolio_category) {
 						<a href="<?php echo get_site_url().'/archive-mister-painkiller' ?>"> <p> Archive </p> </a>
 					<?php } ?>
 			    </div>
+			    
 			</div>
 		</div>
 	<?php }
