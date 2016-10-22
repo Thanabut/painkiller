@@ -8085,6 +8085,9 @@ body.page-template-blog-pinterest-full-width-php .content .full_width {
 	padding: 80px 20px 25px 115px;
 }
 
+.full_width.view-by-print{
+	padding: 80px 20px 25px 115px;
+}
 
 .blog_holder.masonry,
 .blog_holder.masonry_full_width {

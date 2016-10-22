@@ -49,11 +49,68 @@ else { $paged = 1; }
 		<?php
 		}
 		?>
-	<div class="full_width"<?php if($background_color != "") { echo " style='background-color:". $background_color ."'";} ?>>
+	<div class="full_width <?php if($pagename === 'view-by-print') echo "view-by-print"; ?>"<?php if($background_color != "") { echo " style='background-color:". $background_color ."'";} ?>>
 	<div class="full_width_inner" <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
 		<?php if(($sidebar == "default")||($sidebar == "")) : ?>
+			<?php if($pagename === 'view-by-print'): 
+				$cat_id = '11';
+				$args = array( 'category' => $cat_id );
+				$recent_posts = wp_get_recent_posts($args);
+				$post_title = $recent_posts[0]['post_title'];
+				
+				?>
+				<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/paint-page.css">
+
+				<style type="text/css">
+					header{
+						position: fixed;
+					}
+
+					footer .footer_top .container{
+						background-color: #ffffff;
+					}
+					
+				</style>
+
+				<div class="paint">
+					<div class="paint-page"> 
+						<div class="paint-menu-wrapper"> 
+							<div class="view-by-print-menu">
+								<div class='submenu-desktop'> 
+									<ul>
+										<li>
+											<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> <?php echo $post_title; ?></p> </a>
+										</li>
+										<li>
+											<a href="<?php echo get_site_url().'/archive-painkiller' ?>"> <p> Archive </p> </a>
+										</li>
+										<li>
+											<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
+										</li>
+									</ul>
+								</div>
+								<div class='submenu-mobile'> 
+									<ul>
+										<li>
+											<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> <?php echo $post_title; ?></p> </a> 
+										</li>
+										<li>
+											<a href="<?php echo get_site_url().'/archive-painkiller' ?>"> <p> | &nbsp; Archive  </p> </a>
+										</li>
+										<li>
+											<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> | &nbsp; Print </p> </a>
+										</li>
+									</ul>
+								</div>
+							</div>
+					    </div>
+					    <div class='paint-content'>
+			<?php endif; ?>
 			<?php if (have_posts()) : 
 					while (have_posts()) : the_post(); ?>
+
+
+					
 					<?php the_content(); ?>
 					<?php 
  $args_pages = array(
@@ -77,6 +134,10 @@ else { $paged = 1; }
 					}
 					?> 
 					<?php endwhile; ?>
+				<?php endif; ?>
+				<?php if($pagename === 'view-by-print'): ?>
+						</div>
+					</div>
 				<?php endif; ?>
 		<?php elseif($sidebar == "1" || $sidebar == "2"): ?>		
 			
