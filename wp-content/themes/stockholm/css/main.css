@@ -134,6 +134,9 @@
     min-height: 300px;
   }
 }
+.border-btn-footer {
+  border: 3px solid black !important;
+}
 .menu-painkiller {
   position: absolute;
   bottom: 9%;
@@ -175,6 +178,7 @@ nav.mobile_menu {
   width: 77%;
   float: left;
   border: 1px solid #161616;
+  border-bottom: 2px solid;
 }
 .form-row .three input {
   width: 98%;
