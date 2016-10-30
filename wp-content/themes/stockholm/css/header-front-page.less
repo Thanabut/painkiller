@@ -30,27 +30,23 @@
 			&.img-1{
 				top: -30px;
 				left: 0;
-				max-height: 250px;
 			    max-width: 29%;
 			    .side-text{
-			    	@degree: -90deg;
-			    	-ms-transform: rotate(@degree);
-			    	-webkit-transform: rotate(@degree);
-			    	transform: rotate(@degree);
-			    	right: -145px;
-    				top: 106px;
-
+			    	bottom: -31px;
+				    left: 0;
 			    }
 			}
 			&.img-2{
 				bottom: -30px;
-				left: 0;
+				left: 80px;
 				right: 0;
 				margin: 0 auto;
-				max-width: 24%;
+				max-width: 22%;
+				-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    			filter: grayscale(100%);
 				.side-text{
-					bottom: 7px;
-    				right: -174px;
+					bottom: -31px;
+    				left: 0px;
     				z-index: 10;
 				}
 			}
@@ -96,10 +92,10 @@
 		width: 1100px;
 		.header-wrapper div{
 			&.img-1{
-			    max-width: 31%;
+			    max-width: 33%;
 			}
 			&.img-2{
-				max-width: 21%;
+				max-width: 19%;
 			}
 			&.img-3{
 				max-width: 31%;
@@ -121,10 +117,10 @@
 		.header-wrapper div{
 			&.img-1{
 				min-width: 290px;
-			    max-width: 29%;
+			    max-width: 31%;
 			}
 			&.img-2{
-				max-width: 23%;
+				max-width: 21%;
 			}
 			&.img-3{
 				max-width: 29%;
@@ -144,11 +140,11 @@
 		height: 559px;
 		.header-wrapper div{
 			&.img-1{
-			    max-width: 31%;
+			    max-width: 33%;
 		        min-width: 233px;
 			}
 			&.img-2{
-				max-width: 23%;
+				max-width: 21%;
 			}
 			&.img-3{
 				max-width: 31%;
@@ -191,6 +187,7 @@
 
 			}
 			&.img-2{
+				left: 0;
 			    max-width: initial;
 			    max-height: @max-h-img-tablet;
 				@media (max-width: @screen-vxs-max){

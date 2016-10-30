@@ -12,9 +12,9 @@ body > .wrapper > .wrapper_inner > .content > .content_inner > .container {
   background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
   background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
   background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
-  -webkit-background-size: 16px 16px;
-  -moz-background-size: 16px 16px;
-  background-size: 16px 16px;
+  -webkit-background-size: 11px 11px;
+  -moz-background-size: 11px 11px;
+  background-size: 11px 11px;
 }
 body > .wrapper > .wrapper_inner > footer,
 body > .wrapper > .wrapper_inner > footer > .footer_inner,
