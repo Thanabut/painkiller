@@ -88,6 +88,7 @@
 			//end if window
 
 			var lastScrollTop = 0;
+			var limit_scroll = 0;
 			$(window).scroll(function(event){
 				var img_position = $(".header-wrapper .img-1").css("position");
 				if(img_position == "absolute"){
@@ -97,13 +98,19 @@
 				   	console.log(st);
 				   	if (st > lastScrollTop){
 				       	// downscroll code
-				       	img13.animate({"top": "-=1px"},0);
-						img2.animate({"bottom": "+=1px"},0);
+				       	if(limit_scroll <= 30){
+					       	limit_scroll++;
+					       	img13.animate({"top": "-=1px"},0);
+							img2.animate({"bottom": "+=1px"},0);
+				       	}
 
 					} else {
 					    // upscroll code
-					    img13.animate({"top": "+=1px"},0);
-						img2.animate({"bottom": "-=1px"},0);
+					    if(limit_scroll >= 0){
+						    limit_scroll--;
+						    img13.animate({"top": "+=1px"},0);
+							img2.animate({"bottom": "-=1px"},0);
+						}
 					    // $(".header-wrapper > .img-2 > .side-text").animate({"top": "+=0.5px"},0);
 
 					}
