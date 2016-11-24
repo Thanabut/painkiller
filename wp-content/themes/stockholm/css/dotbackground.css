@@ -4,17 +4,15 @@ body > .wrapper > .wrapper_inner,
 body > .wrapper > .wrapper_inner > .content,
 body > .wrapper > .wrapper_inner > .content > .content_inner,
 body > .wrapper > .wrapper_inner > .content > .content_inner > .full_width,
-body > .wrapper > .wrapper_inner > .content > .content_inner > .q_slider,
-body > .wrapper > .wrapper_inner > .content > .content_inner > .page-header,
 body > .wrapper > .wrapper_inner > .content > .content_inner > .container {
   background-color: #f7f7f7;
-  background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
-  background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
-  background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
-  background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
-  -webkit-background-size: 16px 16px;
-  -moz-background-size: 16px 16px;
-  background-size: 16px 16px;
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 0.8px, transparent 0.8px, transparent 100%);
+  background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 0.8px, transparent 0.8px, transparent 100%);
+  background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 0.8px, transparent 0.8px, transparent 100%);
+  background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 0.8px, transparent 0.8px, transparent 100%);
+  -webkit-background-size: 14px 18px;
+  -moz-background-size: 14px 18px;
+  background-size: 14px 18px;
 }
 body > .wrapper > .wrapper_inner > footer,
 body > .wrapper > .wrapper_inner > footer > .footer_inner,

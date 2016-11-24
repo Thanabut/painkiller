@@ -90,7 +90,7 @@ if($category_filter == "yes"){
 	?>
 	
 	<div class="full_width <?php echo $css_class; ?>"<?php if($background_color != "") { echo " style='background-color:". $background_color ."'";} ?>>
-		<div class="full_width_inner ?> <?php echo esc_attr($container_inner_class); ?> " <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
+		<div class="full_width_inner <?php echo esc_attr($container_inner_class); ?> " <?php if($content_style != "") { echo wp_kses($content_style, array('style')); } ?>>
 			<?php
 				print $q_content;
 				if($page === 'archive-mister-painkiller' || $page === 'archive-painkiller'){
@@ -171,5 +171,108 @@ if($category_filter == "yes"){
 			} ?>
 		</div>
 	</div>
+	<div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+		  <div class="modal-content">
+		    <div class="modal-header">
+		      <span class="close">×</span>
+		      <h2>SHARE</h2>
+		    </div>
+		    <?php $share_id = ''; ?>
+		    <input type="hidden" class="share-id" id="share" value=""/>
+		    <div class="modal-body">
+		    <a id="shareBtn" class="btn btn-success clearfix">Fb Share</a>
+		    <a id="twitterBtn" href="#" class="btn btn-success clearfix">Twitter Share</a>
+		     
+		    </div>
+		  </div>
+
+		</div>
 <?php wp_reset_query(); ?>
 <?php get_footer(); ?>
+<!-- The Modal -->
+		
+<script>
+// Get the modal
+
+
+
+(function($) {
+	
+	$(document).ready(function(){
+		// $.ajaxSetup({ cache: true });
+		//   $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+		//     FB.init({
+		//       appId: '342131019456401',
+		//       version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+		//     });     
+		//     // $('#loginbutton,#feedbutton').removeAttr('disabled');
+		//     // FB.getLoginStatus(updateStatusCallback);
+		//   });
+
+		var modal = document.getElementById('myModal');
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+
+		var btn = $('.share').data('id');
+		// console.log(btn);
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+		// When the user clicks the button, open the modal
+		btn.onclick = function() {
+		    modal.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		    modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		} 
+
+		$('.share').on('click', function(){
+			 modal.style.display = "block";
+			 // $('.share-id').value($(this).data('id'));
+			 var cur_article = $(this).parents("article");
+			 console.log(cur_article+"DD");
+			 var post_img = cur_article.find(".post_image > a > img").prop("src");
+			 var post_title = cur_article.find(".post_text > .post_text_inner > h4 > a").text();
+			 var url = cur_article.find(".post_text > .post_text_inner > h4 > a").prop("href");
+			 // console.log(url);
+			 // url = "http://dev.painkilleratelier.com/painkiller/";
+			 
+			 // $("#shareBtn").off("click").on("click",function(){
+			 // 	FB.ui({
+				//     method: 'share',
+				//     mobile_iframe: true,
+				//     href: url,
+				// }, function(response){});
+			 // });
+			 $("#shareBtn").off("click").on("click",function(e){
+			 	e.preventDefault();
+			 	window.open('http://www.facebook.com/sharer.php?s=100&p[title]='+encodeURIComponent(post_title)+'&p[url]='+encodeURIComponent(url)+'&p[images][0]='+encodeURIComponent(post_img)+'&p[summary]=', 'sharer', 'toolbar=0,status=0,width=620,height=280');
+			 	
+			 });
+
+			 var twitterUrl = "https://twitter.com/intent/tweet?url="+encodeURIComponent(url)+"&text="+encodeURIComponent(post_title);
+
+			 $("#twitterBtn").off("click").on("click",function(e){
+			 	e.preventDefault();
+			 	window.open(twitterUrl, 'sharer', 'toolbar=0,status=0,width=620,height=280');
+			 	
+			 });
+		});
+
+		
+	});
+	
+})( jQuery );
+
+</script>

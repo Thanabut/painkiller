@@ -106,6 +106,11 @@ switch ($_post_format) {
 								<div class="post_author">
 									<span><?php echo 'SHARE'; ?></span> 
 								</div>
+								<!-- Trigger/Open The Modal -->
+									<button id="myBtn">Open Modal</button>
+
+									
+
 							<?php } ?>
 							<?php if($blog_hide_comments != "yes"){ ?>
 								<div class="post_comments">
@@ -360,7 +365,8 @@ switch ($_post_format) {
 						<div class="post_author_holder">
 							<?php if($blog_hide_author == "no") { ?>
 								<div class="post_author">
-								   <span><?php echo 'SHARE'; ?></span> <!--<a class="post_author_link" href=" <?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><span><?php the_author_meta('display_name'); ?></span></a> -->
+								   <a href="#" class="share" id="share_<?php echo get_the_ID(); ?>" data-id='<?php echo get_the_ID(); ?>' ><?php echo 'SHARE'; ?></a> 
+								   <!--<a class="post_author_link" href=" <?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><span><?php the_author_meta('display_name'); ?></span></a> -->
 								</div>
 							<?php } ?>
 							<?php if($blog_hide_comments != "yes"){ ?>

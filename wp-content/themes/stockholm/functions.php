@@ -2114,3 +2114,59 @@ if(!function_exists('qode_attachment_field_custom_size_save')) {
 
 add_filter( 'attachment_fields_to_save', 'qode_attachment_field_custom_size_save', 10, 2 );
 
+
+function pk_customize_register($wp_customize) {
+	// $wp_customize->remove_section('title_tagline');
+    // $wp_customize->remove_section('static_front_page');
+    $wp_customize->add_section(
+            'homepage_header_section', array(
+        'title' => 'Homepage Header Settings',
+        'description' => 'This is a settings section of the homepage header.',
+        'priority' => 120,
+            )
+    );
+
+    $wp_customize->add_setting(
+            'img_1', array(
+            )
+    );
+    $wp_customize->add_control(
+            new WP_Customize_Image_Control(
+            $wp_customize, 'img_1', array(
+        'label' => 'Image Upload PAINKILLER recent collection',
+        'section' => 'homepage_header_section',
+        'settings' => 'img_1'
+            )
+            )
+    );
+
+    $wp_customize->add_setting(
+            'img_2', array(
+            )
+    );
+    $wp_customize->add_control(
+            new WP_Customize_Image_Control(
+            $wp_customize, 'img_2', array(
+        'label' => 'Image Upload Archive',
+        'section' => 'homepage_header_section',
+        'settings' => 'img_2'
+            )
+            )
+    );
+
+    $wp_customize->add_setting(
+            'img_3', array(
+            )
+    );
+    $wp_customize->add_control(
+            new WP_Customize_Image_Control(
+            $wp_customize, 'img_3', array(
+        'label' => 'Image Upload MISTER PAINKILLER',
+        'section' => 'homepage_header_section',
+        'settings' => 'img_3'
+            )
+            )
+    );
+
+}
+add_action('customize_register', 'pk_customize_register');
