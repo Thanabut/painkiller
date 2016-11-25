@@ -8,7 +8,7 @@
 		<div class="img-1">
 			<a href="<?php echo get_site_url(); ?>/latest-painkiller">
 				<div class="side-text" style="opacity: 0;">
-					PAINKILLER recent collection
+					PAINKILLER
 				</div>
 				<div class="img-wrapper">
 					<img style="opacity: 0;" src="<?php echo get_theme_mod( 'img_1', get_template_directory_uri().'/img/21.jpg' );?>">
@@ -51,31 +51,31 @@
 
 	(function($) {
 		function resizeImg(){
-			var vHeight = $(window).height()-$(".page_header ").height(),
-		    vWidth = $(window).width(),
-		    cover = $('.page-header');
-
-			cover.css({"height":vHeight,
-				// "width":vWidth
-			});
-			var imgs = $(".img-1 img, .img-2 img");
-			imgs.each(function(index,val){
-				$(val).parent().css({"max-height": vHeight-50});
-			});
-			
-
 			var imgLeft = $(".img-1 img");
 			var imgRight = $(".img-3 img");
 
+			var theHeight = (imgLeft.height() > imgRight.height())? imgRight.height() : imgLeft.height();
+
+			var cover = $('.page-header');
+			
+			var img_position = $(".header-wrapper .img-1").css("position");
+			if(img_position == "absolute"){
+				cover.css({
+					"height":theHeight
+				});
+			}else{
+				cover.css({
+					"height":400+400+10
+				});
+			}
+
 			if(imgLeft.height() > imgRight.height()){
 				imgLeft.parent().css({
-					"max-height": imgRight.height(),
-					"overflow":"hidden"
+					"max-height": imgRight.height()
 				});
 			}else{
 				imgRight.parent().css({
-					"max-height": imgLeft.height(),
-					"overflow":"hidden"
+					"max-height": imgLeft.height()
 				});
 			}
 		}
@@ -95,26 +95,26 @@
 						divHeader.find(".img-1 .side-text").animate({"opacity": "1" , "bottom": "+=5px"}, 500)
 						// divHeader.find(".img-2 .side-text").animate({"opacity": "1" , "bottom": "+=10px"}, 500)
 						divHeader.find(".img-3 .side-text ").animate({"opacity": "1" , "bottom": "+=5px"}, 500,function(){
-								var title = divHeader.find(".header-main-title");
-								var height = title.css({
-							        display: "block"
-							    }).height();
-							    
-							    title.css({
-							        overflow: "hidden",
-							        marginTop: height,
-							        height: 0
-							    }).animate({
-							        marginTop: 0,
-							        height: height
-							    }, 500, function () {
-							        $(this).css({
-							            display: "",
-							            overflow: "",
-							            height: "",
-							            marginTop: ""
-							        });
-							    });
+							var title = divHeader.find(".header-main-title");
+							var height = title.css({
+						        display: "block"
+						    }).height();
+						    
+						    title.css({
+						        overflow: "hidden",
+						        marginTop: height,
+						        height: 0
+						    }).animate({
+						        marginTop: 0,
+						        height: height
+						    }, 500, function () {
+						        $(this).css({
+						            display: "",
+						            overflow: "",
+						            height: "",
+						            marginTop: ""
+						        });
+						    });
 						});
 					} );	
 				});
@@ -167,6 +167,7 @@
 					$(".header-wrapper > .img-1, .header-wrapper > .img-3").css({top:"0px"});
 				}else{
 					$(".header-wrapper > .img-2").css({bottom:"0",left:"0"});
+					
 					imgs.css({"max-height": "none"});
 				}
 
