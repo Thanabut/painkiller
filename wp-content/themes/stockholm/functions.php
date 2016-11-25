@@ -2140,19 +2140,19 @@ function pk_customize_register($wp_customize) {
             )
     );
 
-    $wp_customize->add_setting(
-            'img_2', array(
-            )
-    );
-    $wp_customize->add_control(
-            new WP_Customize_Image_Control(
-            $wp_customize, 'img_2', array(
-        'label' => 'Image Upload Archive',
-        'section' => 'homepage_header_section',
-        'settings' => 'img_2'
-            )
-            )
-    );
+    // $wp_customize->add_setting(
+    //         'img_2', array(
+    //         )
+    // );
+    // $wp_customize->add_control(
+    //         new WP_Customize_Image_Control(
+    //         $wp_customize, 'img_2', array(
+    //     'label' => 'Image Upload Archive',
+    //     'section' => 'homepage_header_section',
+    //     'settings' => 'img_2'
+    //         )
+    //         )
+    // );
 
     $wp_customize->add_setting(
             'img_3', array(
