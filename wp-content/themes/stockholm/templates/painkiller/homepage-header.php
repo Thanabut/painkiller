@@ -80,9 +80,13 @@
 			}
 		}
 		
-		resizeImg();
+		var cover = $('.page-header');
+		cover.css({
+			"height":600
+		});
 		
 		$(document).ready(function(){
+				resizeImg();
 				var divHeader = $(".header-wrapper");
 				divHeader.find('.header-logo > img').animate({ "opacity": "0" }, 0,function(){
 					var img_sDown = divHeader.find(".img-1, .img-3");
