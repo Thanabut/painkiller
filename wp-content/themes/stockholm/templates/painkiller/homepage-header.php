@@ -65,7 +65,7 @@
 				});
 			}else{
 				cover.css({
-					"height":400+400+10
+					"height":$(".img-1").height()*2
 				});
 			}
 
