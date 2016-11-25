@@ -64,7 +64,7 @@ class Qode_Instagram_Widget extends WP_Widget {
     public function widget($args, $instance) {
         extract($instance);
         print $args['before_widget']; ?>
-        <div style='text-align: center;margin-top:60px; margin-bottom: 60px;'> <?php print $args['before_title'].$title.$args['after_title']; ?> </div> <?php
+        <div style='text-align: center;margin-top:60px; margin-bottom: 60px;'> <div class="font-18"><?php print $args['before_title'].$title.$args['after_title']; ?> </div></div> <?php
 
         $instagram_api = QodeStockholmInstagramApi::getInstance();
         $images_array = $instagram_api->getImages($number_of_photos, $tag, array(

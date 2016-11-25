@@ -375,7 +375,7 @@ header.sticky .header_bottom{
 	header.sticky.centered_logo .logo_wrapper,
 	header.sticky .side_menu_button,
 	header.sticky .shopping_cart_inner{
-		height: 80px !important;
+		height: 110px !important;
 	}
 
 	header.sticky nav.main_menu > ul > li > a,
@@ -385,11 +385,11 @@ header.sticky .header_bottom{
 	.dark.sticky nav.main_menu > ul > li > a,
 	.dark.sticky nav.main_menu > ul > li > a:hover,
 	.dark.sticky nav.main_menu > ul > li.active > a {
-		line-height: 80px;
+		line-height: 110px;
 	}
 
 	header.sticky .drop_down .second{
-		top: 81px;
+		top: 111px;
 	}
 
 	header.sticky .header_bottom,
