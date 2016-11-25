@@ -21,6 +21,10 @@
 		div{
 			position: absolute;
 			display: inline-block;
+			&.img-wrapper{
+				position: static;
+				overflow: hidden;
+			}
 			> img{
 				
 			}
@@ -30,30 +34,17 @@
 			&.img-1{
 				top: -30px;
 				left: 0;
-			    max-width: 29%;
+				width: 45%;
+			    max-width: 45%;
 			    .side-text{
 			    	bottom: -31px;
-				    left: 0;
+				    left: 0%;
 			    }
-			}
-			&.img-2{
-				bottom: -30px;
-				left: 80px;
-				right: 0;
-				margin: 0 auto;
-				max-width: 22%;
-				-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    			filter: grayscale(100%);
-				.side-text{
-					bottom: -31px;
-    				left: 0px;
-    				z-index: 10;
-				}
 			}
 			&.img-3{
 				top: -30px;
 				right: 0;
-				max-width: 29%;
+				max-width: 45%;
 				.side-text{
 					bottom: -31px;
 				    right: 0;
@@ -92,13 +83,10 @@
 		width: 1100px;
 		.header-wrapper div{
 			&.img-1{
-			    max-width: 33%;
-			}
-			&.img-2{
-				max-width: 19%;
+			    max-width: 45%;
 			}
 			&.img-3{
-				max-width: 31%;
+				max-width: 45%;
 			}
 			&.header-logo{
 			    max-width: 10%;
@@ -113,17 +101,12 @@
 		}
 	}
 	@media (min-width: @screen-md-min) and (max-width: @screen-md-max){
-		height: 559px;
 		.header-wrapper div{
 			&.img-1{
-				min-width: 290px;
-			    max-width: 31%;
-			}
-			&.img-2{
-				max-width: 21%;
+			    max-width: 45%;
 			}
 			&.img-3{
-				max-width: 29%;
+				max-width: 45%;
 			}
 			&.header-logo{
 				max-width: 9%;
@@ -137,17 +120,16 @@
 		}
 	}
 	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
-		height: 559px;
 		.header-wrapper div{
 			&.img-1{
-			    max-width: 33%;
+			    max-width: 45	%;
 		        min-width: 233px;
 			}
 			&.img-2{
 				max-width: 21%;
 			}
 			&.img-3{
-				max-width: 31%;
+				max-width: 45%;
 				min-width: 247px;
 			}
 			&.header-logo{
