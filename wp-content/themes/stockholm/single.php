@@ -58,11 +58,7 @@ foreach ($portfolio_categories as $portfolio_category) {
 		}
 		 ?>
 
-		<style type="text/css">
-			header{
-				position: fixed;
-			}
-		</style>
+		
 		<div class="menu-mobile-painkiller"> 
 					<?php  if($portfolio_category->name === 'Painkiller'){
 						$post_title = 'S/S16 LAND BEFORE TIME';
