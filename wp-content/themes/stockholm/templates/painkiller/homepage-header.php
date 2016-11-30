@@ -73,8 +73,14 @@
 				imgLeft.parent().css({
 					"max-height": imgRight.height()
 				});
+				imgRight.parent().css({
+					"max-height": imgRight.height()
+				});
 			}else{
 				imgRight.parent().css({
+					"max-height": imgLeft.height()
+				});
+				imgLeft.parent().css({
 					"max-height": imgLeft.height()
 				});
 			}
