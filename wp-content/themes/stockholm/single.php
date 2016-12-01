@@ -95,33 +95,49 @@ foreach ($portfolio_categories as $portfolio_category) {
 						
 					<?php } ?>
 			    </div>
-		<div class="header-painkiller">
-			<div class="header-painkiller-content"> 
-				<div class="menu-painkiller"> 
-					<?php  if($portfolio_category->name === 'Painkiller'){
-						$post_title = 'S/S16 LAND BEFORE TIME';
-						$cat_id = '11';
-						$args = array( 'category' => $cat_id );
-						$recent_posts = wp_get_recent_posts($args);
-						$post_title = $recent_posts[0]['post_title'];
-					 ?>
+		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/painkiller-header.css">
+		<div class="page-header">
+			<div class="img-wrapper">
+				<img src="<?php echo $image_header ?>" class="img-responsive">
+			</div>
+			<div class="menu-tab">
+				<?php  if($portfolio_category->name === 'Painkiller'){
+					$post_title = 'S/S16 LAND BEFORE TIME';
+					$cat_id = '11';
+					$args = array( 'category' => $cat_id );
+					$recent_posts = wp_get_recent_posts($args);
+					$post_title = $recent_posts[0]['post_title'];
+				 ?>
+				<div class="pk-header-menu">
 					<a href="<?php echo get_site_url().'/latest-painkiller' ?>"> <p> <?php echo $post_title; ?></p> </a>
-					
+				</div>
+				<div class="pk-header-menu">
 					<a href="<?php echo get_site_url().'/archive-painkiller' ?>"> <p> Archive </p> </a>
+				</div>
+				<div class="pk-header-menu">
 					<a href="<?php echo get_site_url().'/view-by-print' ?>"> <p> View collection by print </p> </a>
-					<?php }else{ 
-						$cat_id = '4';
-						$args = array( 'category' => $cat_id );
-						$recent_posts = wp_get_recent_posts($args);
-						$post_title = $recent_posts[0]['post_title'];
-						?>
+				</div>
+				<?php }else{ 
+					$cat_id = '4';
+					$args = array( 'category' => $cat_id );
+					$recent_posts = wp_get_recent_posts($args);
+					$post_title = $recent_posts[0]['post_title'];
+					?>
+					<div class="pk-header-menu">
 						<a href="<?php echo get_site_url().'/latest-mister-painkiller' ?>"> <p> <?php echo $post_title; ?></p> </a>
+					</div>
+					<div class="pk-header-menu">
 						<a href="<?php echo get_site_url().'/archive-mister-painkiller' ?>"> <p> Archive </p> </a>
-					<?php } ?>
-			    </div>
+					</div>
+				<?php } ?>
+		    </div>
+		</div>
+		<!-- <div class="header-painkiller">
+			<div class="header-painkiller-content"> 
+				
 			    
 			</div>
-		</div>
+		</div> -->
 	<?php }
 }
 if (have_posts()) : ?>
