@@ -14,7 +14,7 @@
 	width: 95%;
 	margin: 0 auto;
 	.img-wrapper{
-		height: calc(~"100vh - 220px");
+		height: calc(~"100vh - 180px");
 		overflow: hidden;
 		// max-height: 1300px;
 		img {
@@ -23,40 +23,23 @@
 
 		
 	}
+
 	.menu-tab{
-		width:70%;
-		margin: 0 auto;
-		margin-top: 30px;
+		margin-top: 25px;
+		text-align:center;
 		.pk-header-menu{
-			width:33%;
+			display: inline;
 			a p{
 				display: inline;
 			}
-			
-			&:first-child {
-				float: left;
-			}
 			&:nth-child(2) {
-				display: inline-block;
-				text-align: center;
+				margin-right: 50px;
+				margin-left: 50px;
 			}
-			&:nth-child(3) {
-				float:right;
-				text-align:right;
-			}
-		}
-		@media (min-width: 601px) and (max-width: @screen-sm-max){
-			width:95%;
 		}
 		@media only screen and (max-width: 601px){
 	    	display: none;
 	    }
-	}
-
-	@media (min-width: 1200px){
-		.menu-tab{
-			width:900px;
-		}
 	}
 
 	@media (min-width: 1900px){
