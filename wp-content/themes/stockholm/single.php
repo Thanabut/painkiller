@@ -59,7 +59,7 @@ foreach ($portfolio_categories as $portfolio_category) {
 					    background-repeat: no-repeat;
 					    background-image: url(<?php echo $image_header ?>);
 					    background-size: cover;
-					    background-position: none center;
+					    background-position: top center;
 					}
 				</style>
 			<?php
