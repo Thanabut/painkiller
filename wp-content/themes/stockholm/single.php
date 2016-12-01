@@ -53,6 +53,14 @@ foreach ($portfolio_categories as $portfolio_category) {
 					    background-size: cover;
 					    background-position: center center;
 					}
+					.page-header .img-wrapper{
+						position: relative;
+					    background-color: rgba(0, 0, 0, 0);
+					    background-repeat: no-repeat;
+					    background-image: url(<?php echo $image_header ?>);
+					    background-size: cover;
+					    background-position: none center;
+					}
 				</style>
 			<?php
 		}
@@ -98,7 +106,7 @@ foreach ($portfolio_categories as $portfolio_category) {
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/painkiller-header.css">
 		<div class="page-header">
 			<div class="img-wrapper">
-				<img src="<?php echo $image_header ?>" class="img-responsive">
+				<!-- <img src="<?php echo $image_header ?>" class="img-responsive"> -->
 			</div>
 			<div class="menu-tab">
 				<?php  if($portfolio_category->name === 'Painkiller'){
