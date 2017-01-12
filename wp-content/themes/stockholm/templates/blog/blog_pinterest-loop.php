@@ -347,6 +347,7 @@ switch ($_post_format) {
 			<?php } ?>
 			<div class="post_text">
 				<div class="post_text_inner">
+					<div class="painkiler-content">
 					<h4><a href="<?php the_permalink(); ?>" target="_self" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
 					<div class="post_info">
 						<span class="post_category">
@@ -361,6 +362,7 @@ switch ($_post_format) {
 						the_content('<span>Read More</span>');
 					}
 					?>
+					</div>
 					<?php if($blog_hide_author == "no" || $blog_hide_comments != "yes") { ?>
 						<div class="post_author_holder">
 							<?php if($blog_hide_author == "no") { ?>

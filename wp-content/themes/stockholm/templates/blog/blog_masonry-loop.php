@@ -242,6 +242,7 @@ switch ($_post_format) {
 							<?php the_time(get_option('date_format')); ?>
 						</span>
 					</div>
+					<div class="painkiler-content">
 					<h4><a href="<?php the_permalink(); ?>" target="_self" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
 					<?php
 					if($wp_read_more == "off"){
@@ -250,6 +251,7 @@ switch ($_post_format) {
 						the_content('<span>Read More</span>');
 					}
 					?>
+					</div>
 					<?php if($blog_hide_author == "no") { ?>
 						<div class="post_author_holder">
 							<div class="post_author">
