@@ -365,18 +365,18 @@ switch ($_post_format) {
 					</div>
 					<?php if($blog_hide_author == "no" || $blog_hide_comments != "yes") { ?>
 						<div class="post_author_holder">
-							<?php if($blog_hide_author == "no") { ?>
-								<div class="post_author">
-								   <a href="#" class="share" id="share_<?php echo get_the_ID(); ?>" data-id='<?php echo get_the_ID(); ?>' ><?php echo 'SHARE'; ?></a> 
-								   <!--<a class="post_author_link" href=" <?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><span><?php the_author_meta('display_name'); ?></span></a> -->
-								</div>
-							<?php } ?>
 							<?php if($blog_hide_comments != "yes"){ ?>
 								<div class="post_comments">
 									<div class="post_comments" >
 										<span><?php echo (!empty($day))? $day : $newDate; ?></span>
 										<!--<span><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></span>-->
 									</div>
+								</div>
+							<?php } ?>
+							<?php if($blog_hide_author == "no") { ?>
+								<div class="post_author">
+								   <a href="#" class="share" id="share_<?php echo get_the_ID(); ?>" data-id='<?php echo get_the_ID(); ?>' ><?php echo 'SHARE'; ?></a> 
+								   <!--<a class="post_author_link" href=" <?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><span><?php the_author_meta('display_name'); ?></span></a> -->
 								</div>
 							<?php } ?>
 						</div>
