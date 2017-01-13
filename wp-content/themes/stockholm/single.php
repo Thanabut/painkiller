@@ -105,8 +105,12 @@ foreach ($portfolio_categories as $portfolio_category) {
 			    </div>
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/painkiller-header.css">
 		<div class="page-header">
-			<div class="img-wrapper">
-				<!-- <img src="<?php echo $image_header ?>" class="img-responsive"> -->
+			<div class="container">
+				<div class="container_inner default_template_holder">
+					<div class="img-wrapper">
+						<!-- <img src="<?php echo $image_header ?>" class="img-responsive"> -->
+					</div>
+				</div>
 			</div>
 			<div class="menu-tab">
 				<?php  if($portfolio_category->name === 'Painkiller'){
