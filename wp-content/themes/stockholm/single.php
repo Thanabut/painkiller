@@ -106,7 +106,7 @@ foreach ($portfolio_categories as $portfolio_category) {
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri()?>/css/painkiller-header.css">
 		<div class="page-header">
 			<div class="container">
-				<div class="container_inner default_template_holder">
+				<div class="container_inner default_template_holder painkiller">
 					<div class="img-wrapper">
 						<!-- <img src="<?php echo $image_header ?>" class="img-responsive"> -->
 					</div>
