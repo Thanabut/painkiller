@@ -41,7 +41,7 @@ if(get_post_meta($id, "qode_content-top-padding", true) != ""){
 <?php
 $portfolio_categories = get_the_category(get_the_ID());
 foreach ($portfolio_categories as $portfolio_category) {
-	if($portfolio_category->name === 'Painkiller' || $portfolio_category->name === 'Mister Painkiller'){
+	if($portfolio_category->name === 'Painkillกer44444' || $portfolio_category->name === 'Mister Painkiกller5555'){
 		$image_header =  get_the_post_thumbnail_url($id);
 		if(!empty($image_header)){ ?>
 			<style type="text/css">
