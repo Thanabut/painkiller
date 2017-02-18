@@ -13,7 +13,7 @@ if(get_post_meta(get_the_ID(), "qode_choose-portfolio-single-view", true) != "")
 }
 ?>
 <?php if($portfolio_template !== 'fullscreen-slider'){ ?>
-	<h3 class="info_section_title"><?php the_title(); ?></h3>
+	<h3 class="info_section_title hidden_xs"><?php the_title(); ?></h3>
 <?php } ?>
 
 <div class="info portfolio_single_content">

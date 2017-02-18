@@ -152,6 +152,11 @@ foreach ($portfolio_categories as $portfolio_category) {
 		</div> -->
 	<?php }
 }
+?>
+<div class="menu-mobile-painkiller"> 
+</div>
+<?php
+
 if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
 				<?php if(get_post_meta($id, "qode_page_scroll_amount_for_sticky", true)) { ?>
