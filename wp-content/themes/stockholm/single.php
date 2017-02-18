@@ -154,6 +154,7 @@ foreach ($portfolio_categories as $portfolio_category) {
 }
 ?>
 <div class="menu-mobile-painkiller"> 
+	<h3 class="info_section_title"><?php echo the_title(); ?></h3>
 </div>
 <?php
 
