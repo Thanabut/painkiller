@@ -2126,19 +2126,19 @@ function pk_customize_register($wp_customize) {
             )
     );
 
-    $wp_customize->add_setting(
-            'img_1', array(
-            )
-    );
-    $wp_customize->add_control(
-            new WP_Customize_Image_Control(
-            $wp_customize, 'img_1', array(
-        'label' => 'Image Upload PAINKILLER recent collection',
-        'section' => 'homepage_header_section',
-        'settings' => 'img_1'
-            )
-            )
-    );
+    // $wp_customize->add_setting(
+    //         'img_1', array(
+    //         )
+    // );
+    // $wp_customize->add_control(
+    //         new WP_Customize_Image_Control(
+    //         $wp_customize, 'img_1', array(
+    //     'label' => 'Image Upload PAINKILLER recent collection',
+    //     'section' => 'homepage_header_section',
+    //     'settings' => 'img_1'
+    //         )
+    //         )
+    // );
 
     // $wp_customize->add_setting(
     //         'img_2', array(
@@ -2154,16 +2154,30 @@ function pk_customize_register($wp_customize) {
     //         )
     // );
 
+    // $wp_customize->add_setting(
+    //         'img_3', array(
+    //         )
+    // );
+    // $wp_customize->add_control(
+    //         new WP_Customize_Image_Control(
+    //         $wp_customize, 'img_3', array(
+    //     'label' => 'Image Upload MISTER PAINKILLER',
+    //     'section' => 'homepage_header_section',
+    //     'settings' => 'img_3'
+    //         )
+    //         )
+    // );
+
     $wp_customize->add_setting(
-            'img_3', array(
+            'front-page-cover', array(
             )
     );
     $wp_customize->add_control(
             new WP_Customize_Image_Control(
-            $wp_customize, 'img_3', array(
-        'label' => 'Image Upload MISTER PAINKILLER',
+            $wp_customize, 'front-page-cover', array(
+        'label' => 'Image Upload Front Page Cover',
         'section' => 'homepage_header_section',
-        'settings' => 'img_3'
+        'settings' => 'front-page-cover'
             )
             )
     );

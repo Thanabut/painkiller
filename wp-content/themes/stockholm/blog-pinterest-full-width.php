@@ -69,7 +69,8 @@ if($category_filter == "yes"){
 			$css_class = 'archive-padding';
 		}
 		if($page !== 'archive-mister-painkiller' && $page !== 'archive-painkiller'){
-			get_template_part('templates/painkiller/homepage-header');
+			// get_template_part('templates/painkiller/homepage-header');
+			get_template_part('templates/painkiller/homepage-header2');
 		}
 
 		$revslider = get_post_meta($id, "qode_revolution-slider", true);
